@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mapa.png-595a3051a4bc59815dba2a1d2fa421d1.stex"
+path="res://.import/Flipper.png-f3a852faf566609874130b3364a18a34.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/mapa.png"
-dest_files=[ "res://.import/mapa.png-595a3051a4bc59815dba2a1d2fa421d1.stex" ]
+source_file="res://img/Flipper.png"
+dest_files=[ "res://.import/Flipper.png-f3a852faf566609874130b3364a18a34.stex" ]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Paddle/test/paddleTest.cs" type="Script" id=1]
-[ext_resource path="res://Paddle/paddleRight.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Paddle/paddleLeft.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/flipper/test/flipperTest.cs" type="Script" id=1]
+[ext_resource path="res://objects/flipper/flipperRight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/flipper/flipperLeft.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )

@@ -53,8 +53,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="objects\paddle\paddle.cs" />
-    <Compile Include="objects\paddle\test\paddleTest.cs" />
+    <Compile Include="Camera2D.cs" />
+    <Compile Include="objects\flipper\flipper.cs" />
+    <Compile Include="objects\flipper\test\flipperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

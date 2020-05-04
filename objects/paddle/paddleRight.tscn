@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://objects/paddle/paddle.cs" type="Script" id=1]
-
-[sub_resource type="CapsuleShape2D" id=1]
-height = 64.0
 
 [node name="paddleRight" type="KinematicBody2D" groups=[
 "paddleRight",
@@ -18,9 +15,9 @@ __meta__ = {
 angleEnd = 30.0
 time = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( -32, 0 )
 rotation = 1.5708
-shape = SubResource( 1 )
+polygon = PoolVector2Array( -21.5576, -25.721, 21.9799, -37.7047, 11.68, 156.869 )
 
 [node name="Tween" type="Tween" parent="."]

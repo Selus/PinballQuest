@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/paddle/paddleRight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/paddle/paddleLeft.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/paddle/test/paddleTest.cs" type="Script" id=6]
@@ -10,22 +10,24 @@
 [node name="Main" type="Node2D"]
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
-margin_left = 156.0
-margin_top = 205.0
-margin_right = 156.0
-margin_bottom = 205.0
+margin_left = 361.152
+margin_top = 728.335
+margin_right = 361.152
+margin_bottom = 728.335
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
-position = Vector2( 336, 445 )
+position = Vector2( 541.152, 968.335 )
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
-position = Vector2( 401.681, 189.415 )
+position = Vector2( 606.833, 712.75 )
+mass = 13.3158
 
 [node name="paddle" type="Node2D" parent="."]
+position = Vector2( 205.152, 523.335 )
 script = ExtResource( 6 )
 
 [node name="paddleLeft" parent="paddle" instance=ExtResource( 5 )]
-position = Vector2( 156.464, 751.959 )
+position = Vector2( 46.9902, 1109.85 )
 
 [node name="paddleRight" parent="paddle" instance=ExtResource( 4 )]
-position = Vector2( 447.464, 753.959 )
+position = Vector2( 516.938, 1105.54 )

@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://objects/spring/spring.tscn" type="PackedScene" id=1]
-[ext_resource path="res://objects/bumper/bumper.tscn" type="PackedScene" id=2]
-[ext_resource path="res://objects/enemy/enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/spring/Spring.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/bumper/Bumper.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -19,11 +19,9 @@ shape = SubResource( 1 )
 
 [node name="Bumper" parent="." instance=ExtResource( 2 )]
 position = Vector2( 500, 636.029 )
-strength = 512.0
 
 [node name="spring" parent="." instance=ExtResource( 1 )]
 position = Vector2( 113.736, 430.332 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 412.611, 356.493 )
-distance = 256.0

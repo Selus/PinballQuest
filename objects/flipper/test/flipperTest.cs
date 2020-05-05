@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class flipperTest : Node2D
+public class FlipperTest : Node2D
 {
 	public override void _Process(float delta)
 	{

@@ -1,24 +1,24 @@
 using Godot;
 using System;
 
-public class bumper : RigidBody2D
+public class Bumper : RigidBody2D
 {
-    [Export] private float strength = 512f;
-    
+	[Export] private float strength = 512f;
+	
 
-    public override void _Ready()
-    {
-        this.Connect("body_entered", this, "Fire");
-    }
+	public override void _Ready()
+	{
+		this.Connect("body_entered", this, "Fire");
+	}
 
-    private void Fire(Node node)
-    {   
-        if (node.GetType() == typeof(RigidBody2D))
-        {
-            RigidBody2D rigid = node as RigidBody2D;
+	private void Fire(Node node)
+	{   
+		if (node.GetType() == typeof(RigidBody2D))
+		{
+			RigidBody2D rigid = node as RigidBody2D;
 
-            Vector2 rigidDir = GlobalPosition.DirectionTo(rigid.GlobalPosition).Normalized();
-            rigid.ApplyImpulse(GlobalPosition, rigidDir * strength);
-        }
-    }
+			Vector2 rigidDir = GlobalPosition.DirectionTo(rigid.GlobalPosition).Normalized();
+			rigid.ApplyImpulse(GlobalPosition, rigidDir * strength);
+		}
+	}
 }

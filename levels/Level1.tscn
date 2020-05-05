@@ -22,3 +22,13 @@ position = Vector2( 581.953, 451.409 )
 
 [node name="Bumper" parent="." instance=ExtResource( 4 )]
 position = Vector2( 423.681, 452.916 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Left" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 229.713, 510.502, 174.894, 455.683, 149.234, 333.216, 149.234, 120.939, 108.412, 0.803925, -0.0594788, -0.362427, 2.27327, 510.502 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="Right" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 755.713, 507.577, 811.115, 455.499, 836.6, 428.906, 824.411, 386.801, 836.6, 332.507, 832.167, 246.08, 918.594, 157.437, 917.486, 89.8464, 835.492, 87.6303, 836.6, 114.223, 821.087, 130.844, 808.899, 134.168, 796.71, 134.168, 787.846, 123.088, 780.09, 114.223, 780.09, 3.41934, 945.187, -2.12085, 950.728, 505.361 )

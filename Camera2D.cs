@@ -33,6 +33,10 @@ public class Camera2D : Godot.Camera2D
 	// 		Position = new Vector2(Position.x,Position.y-100);
 	// 	}
 	RigidBody2D ball = GetNode("/root/Main/Ball") as RigidBody2D;
-	Position = new Vector2(ball.Position.x,ball.Position.y);
+	GD.Print("a");
+	if(ball != null) {
+		GD.Print("b");
+		Position = new Vector2(ball.Position.x,ball.Position.y);
+	}
   }
 }

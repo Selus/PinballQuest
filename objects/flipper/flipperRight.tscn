@@ -3,9 +3,8 @@
 [ext_resource path="res://objects/flipper/Flipper.cs" type="Script" id=1]
 [ext_resource path="res://img/Flipper.png" type="Texture" id=2]
 
-
-[node name="paddleRight" type="KinematicBody2D" groups=[
-"paddleRight",
+[node name="FlipperRight" type="KinematicBody2D" groups=[
+"FlipperRight",
 ]]
 rotation = -0.436332
 collision/safe_margin = 0.16

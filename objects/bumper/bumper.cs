@@ -3,7 +3,7 @@ using System;
 
 public class Bumper : RigidBody2D
 {
-	[Export] private float strength = 512f;
+	[Export] private float strength = 1024f;
 	
 
 	public override void _Ready()

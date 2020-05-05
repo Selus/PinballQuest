@@ -3,13 +3,12 @@ using System;
 
 public class Main : Node2D
 {
-	// Declare member variables here. Examples:
-	// private int a = 2;
-	// private string b = "text";
+	private int points = 0;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		instance = this;
 		generateMap();
 	}
 	
@@ -58,5 +57,22 @@ public class Main : Node2D
 		{
 			GetTree().CallGroup("FlipperRight", "Activate");
 		}
+	}
+
+
+	//api
+	private static Main instance=null;
+	static public Main GetInstance() 
+	{
+		return instance;
+	}
+
+	public void addPoints(int amount)
+	{
+		points =+ amount;
+	}
+	public int getPoints()
+	{
+		return points;
 	}
 }

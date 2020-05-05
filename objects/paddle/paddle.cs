@@ -32,7 +32,7 @@ public class paddle : KinematicBody2D
 
 
 	private void Pressed()
-	{
+	{		
 		tween.Stop(this);
 		float timeTo = time / Mathf.Abs(RotationDegrees - angleEnd);
 		tween.InterpolateProperty(this, "rotation_degrees", RotationDegrees, angleEnd, timeTo);

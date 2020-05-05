@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class paddle : KinematicBody2D
+public class flipper : KinematicBody2D
 {
 	[Export] private float angleEnd = -30;
 	[Export] private float time = 3;

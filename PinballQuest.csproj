@@ -53,14 +53,15 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera2D.cs" />
+    <Compile Include="objects\flipper\flipper.cs" />
+    <Compile Include="objects\flipper\test\flipperTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="objects\spring\spring.cs" />
+    <Compile Include="proto\bounce\bounce.cs" />
     <Compile Include="objects\bumper\bumper.cs" />
     <Compile Include="objects\enemy\enemy.cs" />
     <Compile Include="objects\movable\movable.cs" />
-    <Compile Include="objects\paddle\paddle.cs" />
-    <Compile Include="objects\paddle\test\paddleTest.cs" />
-    <Compile Include="objects\spring\spring.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="proto\bounce\bounce.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

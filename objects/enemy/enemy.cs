@@ -15,57 +15,100 @@ public class Enemy : RigidBody2D
 	private Vector2 newVelocity;
 	private Tween tween;
 
+	private AnimationPlayer anim;
+	private AudioStreamPlayer2D audioDead;
+	private Sprite spriteBee;
+	private Timer timer;
+
+
 	public override void _Ready()
 	{
 		startPos = GlobalPosition;
 		tween = GetNode("Tween") as Tween;
+		timer = GetNode("Timer") as Timer;
+		audioDead = GetNode("AudioStreamPlayer2D") as AudioStreamPlayer2D;
 
 		this.Connect("body_entered", this, "Fly");
+		timer.Connect("timeout", this, "Timeout");
 
 		random = new RandomNumberGenerator();
+		System.Random seed = new System.Random();
+		random.Seed = this.GetInstanceId() + (ulong)System.DateTime.Now.Second;
+
 		Vector2 dir = new Vector2(random.RandfRange(-1f, 1f), random.RandfRange(-1f, 1f));
 		LinearVelocity = dir * speed;
+
+		anim = GetNode("AnimationPlayer") as AnimationPlayer;
+		anim.Play("Wings");
+
+		spriteBee = GetNode("Bee") as Sprite;
 	}
+
 
 	public override void _PhysicsProcess(float delta)
 	{
-		GD.Randomize();
-
-		if (GlobalPosition.DistanceTo(startPos) > distance)
+		if (health > 0)
 		{
-			returning = true;
-			newVelocity = GlobalPosition.DirectionTo(startPos).Normalized() * (speed * 2);
-			tween.Stop(this);
-			tween.InterpolateProperty(this, "linear_velocity", LinearVelocity, newVelocity, 1f);
-			tween.Start();
-		}
+			if (GlobalPosition.DistanceTo(startPos) > distance)
+			{
+				returning = true;
+				newVelocity = GlobalPosition.DirectionTo(startPos).Normalized() * (speed * 2);
+				tween.Stop(this);
+				tween.InterpolateProperty(this, "linear_velocity", LinearVelocity, newVelocity, 1f);
+				tween.Start();
+			}
 
-		if (GlobalPosition.DistanceTo(startPos) < distance/2 && returning == true)
-		{
-			returning = false;
-			Change(true);
-		}
+			if (GlobalPosition.DistanceTo(startPos) < distance/2 && returning == true)
+			{
+				returning = false;
+				Change(true);
+			}
 
-		if (returning == false && random.RandiRange(0, randomness) == randomness)
-		{
-			Change(true, -1f, 1f);
+			if (returning == false && random.RandiRange(0, randomness) == randomness)
+			{
+				Change(true, -1f, 1f);
+			}
 		}
 	}
+
 
 	private void Fly(Node node)
 	{
 		Change();
 
-		if (node.IsClass(ball))
+		if (node.GetType() == typeof(Ball) && health > 0 && timer.TimeLeft <= 0)
 		{
 			health--;
+			timer.Start();
+
+			spriteBee.Modulate -= Color.Color8(0, 50, 100, 0);
 
 			if (health <= 0)
 			{
-				this.RemoveAndSkip();
+				spriteBee.Modulate = Color.Color8(200, 25, 25, 200);
+				CollisionMask = 0;
+				CollisionLayer = 0;
+				LinearVelocity = Vector2.Zero;
+				GravityScale = 1;
+				ApplyCentralImpulse(Vector2.Down * speed);
+				ApplyTorqueImpulse(speed);
+				timer.WaitTime = 10;
+				timer.Start();
+				anim.Stop();
+				audioDead.Play();
 			}
 		}
 	}
+
+
+	private void Timeout()
+	{
+		if (health <= 0)
+		{
+			this.RemoveAndSkip();
+		}
+	}
+
 
 	private void Change(bool rand = false, float randMin = -1f, float randMax = 1f)
 	{

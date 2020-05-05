@@ -18,7 +18,8 @@ position = Vector2( 294.878, 137.327 )
 position = Vector2( 623.905, 120.625 )
 
 [node name="spring" parent="." instance=ExtResource( 3 )]
-position = Vector2( 779.233, 277.623 )
+position = Vector2( 837.128, 277.623 )
+rotation = -3.13704
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

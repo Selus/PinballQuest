@@ -5,15 +5,11 @@
 [ext_resource path="res://Camera2D.cs" type="Script" id=7]
 
 [node name="Main" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 1 )
 
-[node name="HUD" parent="." instance=ExtResource( 2 )]
-margin_left = 361.152
-margin_top = -78.5469
-margin_right = 361.152
-margin_bottom = -78.5469
-
 [node name="Camera2D" type="Camera2D" parent="."]
+pause_mode = 2
 position = Vector2( 540, 1000 )
 current = true
 limit_left = 0
@@ -21,3 +17,8 @@ limit_top = -100000
 limit_right = 1080
 limit_bottom = 100000
 script = ExtResource( 7 )
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="HUD" parent="HUDLayer" instance=ExtResource( 2 )]

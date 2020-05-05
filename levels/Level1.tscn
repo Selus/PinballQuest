@@ -26,7 +26,7 @@ position = Vector2( 423.681, 452.916 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Left" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 229.713, 510.502, 174.894, 455.683, 149.234, 333.216, 149.234, 120.939, 108.412, 0.803925, -0.0594788, -0.362427, 2.27327, 510.502 )
+polygon = PoolVector2Array( 229.713, 510.502, 190.613, 423.366, 149.234, 333.216, 149.234, 120.939, 108.412, 0.803925, -0.0594788, -0.362427, 2.27327, 510.502 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 

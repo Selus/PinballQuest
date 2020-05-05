@@ -1,15 +1,62 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://HUD.cs" type="Script" id=1]
+[ext_resource path="res://fonts/bubbly.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/Solid.tres" type="DynamicFont" id=3]
+[ext_resource path="res://StartButton.cs" type="Script" id=4]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 12.0
-margin_top = 39.0
-margin_right = 134.0
-margin_bottom = 101.0
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.384314 )
+margin_right = 1080.0
+margin_bottom = 93.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="."]
+margin_right = 1080.0
+margin_bottom = 93.0
+custom_fonts/font = ExtResource( 2 )
+text = "1202"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="Menu"]
+margin_left = 329.181
+margin_top = 970.549
+margin_right = 760.181
+margin_bottom = 1177.55
+custom_fonts/font = ExtResource( 3 )
 text = "START"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="Menu"]
+margin_top = 717.724
+margin_right = 1077.06
+margin_bottom = 901.724
+custom_fonts/font = ExtResource( 2 )
+text = "PinHamster"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

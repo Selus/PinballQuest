@@ -39,12 +39,12 @@ __meta__ = {
 }
 
 [node name="StartButton" type="Button" parent="Menu"]
-margin_left = 329.181
-margin_top = 970.549
-margin_right = 760.181
-margin_bottom = 1177.55
+margin_left = 220.537
+margin_top = 952.931
+margin_right = 840.537
+margin_bottom = 1159.93
 custom_fonts/font = ExtResource( 3 )
-text = "START"
+text = "(re)START"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false

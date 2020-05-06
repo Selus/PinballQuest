@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Main : Node2D
 {
 	private int points = 0;
+	private int lives = 1;
 	private BallCamera camera;
 	private List<Ball> balls = new List<Ball>();
 	private List<Checkpoint> checkpoints = new List<Checkpoint>();
@@ -51,12 +52,17 @@ public class Main : Node2D
 		}
 
 
+//input manager
 		if (Input.IsActionJustPressed("ui_up"))
 		{
 			foreach(Ball ball in balls)
 			{
 				ball.ApplyImpulse(GlobalPosition, new Vector2(0,-1) * 1024);
 			}
+		}
+		if (Input.IsActionJustPressed("restart"))
+		{
+			restartGame();
 		}
 
 		if (Input.IsActionJustPressed("ui_left"))
@@ -116,6 +122,23 @@ public class Main : Node2D
 	}
 	public void startGame()
 	{
+		GetTree().Paused = false;
+		hideGUI();
+	}
+	public void gameOver()
+	{
+		GetTree().Paused = false;
+		hideGUI();
+	}
+	public void restartGame()
+	{
+		points = 0;
+		lives = 1;
+		RemoveChild(GetNode("Level_3"));
+		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_3.tscn");
+		var node = (Level)scene.Instance();
+		camera.LimitBottom = 1000000;
+		AddChild(node);
 		GetTree().Paused = false;
 		hideGUI();
 	}

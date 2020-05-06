@@ -29,7 +29,6 @@ public class Ball : RigidBody2D
 		random = new RandomNumberGenerator();
 	}
 
-
 	private void _BodyEntered(Node node)
 	{
 		GD.Randomize();

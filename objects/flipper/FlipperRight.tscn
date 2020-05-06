@@ -6,11 +6,13 @@
 [node name="FlipperRight" type="KinematicBody2D" groups=[
 "FlipperRight",
 ]]
+position = Vector2( -1, 0 )
 rotation = -0.436332
 collision/safe_margin = 0.16
 motion/sync_to_physics = true
 script = ExtResource( 1 )
 angleEnd = 30.0
+angleStart = -25.0
 time = 2.0
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]

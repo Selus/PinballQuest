@@ -24,7 +24,8 @@ public class Bumper : RigidBody2D
 			RigidBody2D rigid = node as RigidBody2D;
 
 			Vector2 rigidDir = GlobalPosition.DirectionTo(rigid.GlobalPosition).Normalized();
-			rigid.ApplyImpulse(GlobalPosition, rigidDir * strength);
+			GD.Print(rigidDir * strength);
+			rigid.LinearVelocity = rigidDir * strength;
 
 			anim.Play("hit");
 		}

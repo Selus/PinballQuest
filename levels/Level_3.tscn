@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://objects/sides/Island_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/sides/Side_12.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://objects/sides/Side_4.tscn" type="PackedScene" id=22]
 [ext_resource path="res://objects/bottom/Bottom_1.tscn" type="PackedScene" id=23]
 [ext_resource path="res://img/bg_1.png" type="Texture" id=24]
+[ext_resource path="res://objects/bumpable/Bumpable.tscn" type="PackedScene" id=25]
 
 [node name="Level_3" type="Node2D"]
 
@@ -87,41 +88,44 @@ position = Vector2( 349.703, 1762.11 )
 position = Vector2( 471.965, 1940.67 )
 
 [node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 434.688, 3380.31 )
+position = Vector2( 870.161, 2927.93 )
 
 [node name="Bottom_2" parent="." instance=ExtResource( 20 )]
-position = Vector2( 279.393, 2976.07 )
+position = Vector2( 266.996, 3009.17 )
 
 [node name="Bottom_6" parent="." instance=ExtResource( 15 )]
-position = Vector2( 459.657, 2515.47 )
+position = Vector2( 537.951, 2557.42 )
+rotation = -0.872665
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Bottom_7" parent="." instance=ExtResource( 15 )]
-position = Vector2( 663.415, 2515.49 )
+position = Vector2( 648.056, 2530.23 )
+rotation = -0.872665
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Bottom_4" parent="." instance=ExtResource( 15 )]
-position = Vector2( 562.084, 2517.21 )
+position = Vector2( 630.037, 2393.21 )
+rotation = -0.872665
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Bottom_5" parent="." instance=ExtResource( 20 )]
-position = Vector2( 830.178, 2977.48 )
+position = Vector2( 836.98, 2999.25 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 
 [node name="Bottom_1" parent="." instance=ExtResource( 23 )]
-position = Vector2( 151.138, 2967.82 )
+position = Vector2( 160.002, 2982.22 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Bottom_3" parent="." instance=ExtResource( 23 )]
-position = Vector2( 956.604, 2952.7 )
+position = Vector2( 934.388, 2984.03 )
 scale = Vector2( -1.5, 1.5 )
 
 [node name="FlipperLeft2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 361.972, 3406.83 )
+position = Vector2( 375.691, 3440.47 )
 
 [node name="FlipperRight" parent="." instance=ExtResource( 21 )]
-position = Vector2( 746.9, 3401.27 )
+position = Vector2( 730.793, 3442.52 )
 
 [node name="Side_8" parent="." instance=ExtResource( 16 )]
 position = Vector2( -1.06073, 2131.21 )
@@ -163,3 +167,16 @@ position = Vector2( 592.385, 1743 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 571.888, 2883.71 )
+
+[node name="Bumpable" parent="." instance=ExtResource( 25 )]
+position = Vector2( 300.472, 3135.76 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bumpable"]
+polygon = PoolVector2Array( -6.80444, -24.2112, -33.1758, -127.938, 72.3094, 151.597 )
+
+[node name="Bumpable2" parent="." instance=ExtResource( 25 )]
+position = Vector2( 800.422, 3128.4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bumpable2"]
+scale = Vector2( -1, 1 )
+polygon = PoolVector2Array( -6.80444, -24.2112, -33.1758, -127.938, 72.3094, 151.597 )

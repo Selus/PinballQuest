@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://objects/bottom/Bottom_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/bottom/Bottom_2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/sides/Side_6.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/flipper/FlipperLeft.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/flipper/FlipperRight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/bumper/Bumper.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/sides/Side_7.tscn" type="PackedScene" id=7]
+
+[node name="Level_0" type="Node2D"]
+position = Vector2( 0, 163 )
+
+[node name="Bottom_1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200, 106 )
+
+[node name="Bottom_2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 297.68, 42.1122 )
+
+[node name="Side_6" parent="." instance=ExtResource( 3 )]
+
+[node name="Bottom_4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 880, 106 )
+scale = Vector2( -1, 1 )
+
+[node name="Bottom_3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 792.344, 49.2721 )
+scale = Vector2( -1, 1 )
+
+[node name="Side_7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1080, 0 )
+scale = Vector2( -1, 1 )
+
+[node name="FlipperLeft" parent="." instance=ExtResource( 4 )]
+position = Vector2( 349.231, 407.184 )
+
+[node name="FlipperRight" parent="." instance=ExtResource( 5 )]
+position = Vector2( 730.769, 405.752 )
+
+[node name="Bumper" parent="." instance=ExtResource( 6 )]
+position = Vector2( 537.116, 534.204 )
+
+[node name="Side_9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, -162.659 )
+
+[node name="Side_10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1080, -162.659 )
+scale = Vector2( -1, 1 )

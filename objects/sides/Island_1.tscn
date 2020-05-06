@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/sides/sprites/Island_1_green.png" type="Texture" id=2]
+
+[node name="Island_1" type="Node2D"]
+
+[node name="Island_1_green" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 72, -240.7, 134, -207.8, 134, -131.5, 106.4, -131.5, 64, -123.8, 64, -123, 41, -116, 41, -115.2, 12, -101.2, 12, -100.4, -6, -88.4, -6, -87.6, -28, -66.7, -28, -64.8, -42, -46.8, -42, -45, -52, -27, -52, -24.1, -59, -7.2, -59, -3.3, -66, 30.9, -66, 47.5, -68, 241.5, -123, 241.5, -123, 239.1, -129, 230.1, -129, 226.8, -134, 210.4, -134, -83, -131.8, -103.5, -130.5, -103.5, -119.5, -140.5, -118.2, -140.5, -103.2, -168.5, -102, -168.5, -85, -189.5, -82.7, -189.5, -53.7, -213.5, -51.5, -213.5, -23.5, -228.5, -20.3, -228.5, 9.7, -238.5, 14.7, -238.5, 37, -241.5, 72, -241.5 )

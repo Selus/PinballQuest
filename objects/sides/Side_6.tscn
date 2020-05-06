@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/sides/sprites/Side_6_green.png" type="Texture" id=1]
+
+[node name="Side_6" type="Node2D"]
+
+[node name="Side_6_green" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 93, 15, 92, 150, 92.9, 150, 97.9, 245, 98.7, 245, 108.8, 316, 109.6, 316, 114.6, 339, 115.4, 339, 126.4, 368, 127, 368, 150, 399, 150.8, 399, 196.8, 444, 198.7, 444, 246.7, 482, 248.6, 482, 316, 525.6, 316, 530, 259.5, 606, 248.6, 606, 0, 536.1, 0, 0, 93, 0 )

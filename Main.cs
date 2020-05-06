@@ -15,32 +15,32 @@ public class Main : Node2D
 
 	private void generateMap()
 	{
-		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level1.tscn");
+		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_0.tscn");
 		var node = (Node2D)scene.Instance();
 		node.PauseMode = Node.PauseModeEnum.Stop;
 		AddChild(node);
-		Node2D lastNode;
-		var scene2 = (PackedScene)ResourceLoader.Load("res://levels/Level3.tscn");
-		var node2 = (Node2D)scene2.Instance();
-		lastNode = node2;
-		node2.Position = new Vector2(node.Position.x,node.Position.y - 2000);
-		node2.PauseMode = Node.PauseModeEnum.Stop;
-		AddChild(node2);
-		for( int i = 0; i < 10 ; i++) 
-		{
-			scene2 = (PackedScene)ResourceLoader.Load("res://levels/Level3.tscn");
-			node2 = (Node2D)scene2.Instance();
-			node2.Position = new Vector2(lastNode.Position.x,lastNode.Position.y-2000);
-			node2.PauseMode = Node.PauseModeEnum.Stop;
-			AddChild(node2);
-			lastNode = node2;
-		}
+		// Node2D lastNode;
+		// var scene2 = (PackedScene)ResourceLoader.Load("res://levels/Level3.tscn");
+		// var node2 = (Node2D)scene2.Instance();
+		// lastNode = node2;
+		// node2.Position = new Vector2(node.Position.x,node.Position.y - 2000);
+		// node2.PauseMode = Node.PauseModeEnum.Stop;
+		// AddChild(node2);
+		// for( int i = 0; i < 10 ; i++) 
+		// {
+		// 	scene2 = (PackedScene)ResourceLoader.Load("res://levels/Level3.tscn");
+		// 	node2 = (Node2D)scene2.Instance();
+		// 	node2.Position = new Vector2(lastNode.Position.x,lastNode.Position.y-2000);
+		// 	node2.PauseMode = Node.PauseModeEnum.Stop;
+		// 	AddChild(node2);
+		// 	lastNode = node2;
+		// }
 
-		scene = (PackedScene)ResourceLoader.Load("res://objects/ball/Ball.tscn");
-		node = (Node2D)scene.Instance();
-		node.PauseMode = Node.PauseModeEnum.Stop;
-		node.Position = new Vector2(200,-500);
-		AddChild(node);
+		// scene = (PackedScene)ResourceLoader.Load("res://objects/ball/Ball.tscn");
+		// node = (Node2D)scene.Instance();
+		// node.PauseMode = Node.PauseModeEnum.Stop;
+		// node.Position = new Vector2(200,-500);
+		// AddChild(node);
 	}
 
 	public override void _Process(float delta)

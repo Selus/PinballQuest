@@ -15,7 +15,6 @@ public class Bumper : RigidBody2D
 	{   
 		if (node.GetType() == typeof(Ball))
 		{
-			GD.Print("Asdasd");
 			RigidBody2D rigid = node as RigidBody2D;
 
 			Vector2 rigidDir = GlobalPosition.DirectionTo(rigid.GlobalPosition).Normalized();

@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=2]
-
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://objects/sides/Island_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/sides/Side_12.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/sides/Side_10.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/sides/Island_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/sides/Side_11.tscn" type="PackedScene" id=5]
-
 [ext_resource path="res://objects/bumpable/Bumpable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/enemy/enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/bumper/bumper.tscn" type="PackedScene" id=8]
@@ -14,6 +12,8 @@
 [ext_resource path="res://objects/spring/spring.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/stars/Stars.tscn" type="PackedScene" id=11]
 [ext_resource path="res://objects/sides/Island_3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=13]
+[ext_resource path="res://objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=14]
 
 [node name="Level_3" type="Node2D"]
 
@@ -68,3 +68,12 @@ position = Vector2( 409.399, 604.978 )
 
 [node name="Bumper" parent="." instance=ExtResource( 8 )]
 position = Vector2( 448, 1668 )
+
+[node name="Ball" parent="." instance=ExtResource( 13 )]
+position = Vector2( 429.08, 1292.51 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 14 )]
+position = Vector2( 282.487, 1786.03 )
+
+[node name="Checkpoint" parent="Checkpoint" instance=ExtResource( 14 )]
+position = Vector2( 190.703, -789.399 )

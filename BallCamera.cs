@@ -16,7 +16,7 @@ public class BallCamera : Godot.Camera2D
   // Called every frame. 'delta' is the elapsed time since the previous frame.
   public override void _Process(float delta)
   {
-	RigidBody2D ball = GetNode("/root/Main/Ball") as RigidBody2D;
+	RigidBody2D ball = GetNode("/root/Main/Level_3/Ball") as RigidBody2D;
 	if(ball != null) {
 		Position = new Vector2(ball.Position.x,ball.Position.y);
 	}

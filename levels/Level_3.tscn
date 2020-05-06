@@ -203,7 +203,7 @@ position = Vector2( -0.362198, 2782.68 )
 position = Vector2( -419.938, 1514.2 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 571.888, 2883.71 )
+position = Vector2( 721.673, 2775.67 )
 
 [node name="Bumpable" parent="." instance=ExtResource( 25 )]
 position = Vector2( 300.472, 3135.76 )
@@ -212,11 +212,12 @@ position = Vector2( 300.472, 3135.76 )
 polygon = PoolVector2Array( -6.80444, -24.2112, -33.1758, -127.938, 72.3094, 151.597 )
 
 [node name="Bumpable2" parent="." instance=ExtResource( 25 )]
-position = Vector2( 800.422, 3128.4 )
+position = Vector2( 568.155, -968.156 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bumpable2"]
+position = Vector2( 251.584, -52.5568 )
 scale = Vector2( -1, 1 )
-polygon = PoolVector2Array( -6.80444, -24.2112, -33.1758, -127.938, 72.3094, 151.597 )
+polygon = PoolVector2Array( 160.621, 11.6726, 190.404, 153.366, 313.144, -41.5751, 204.844, -35.2576 )
 
 [node name="dandelion2" parent="." instance=ExtResource( 28 )]
 position = Vector2( 813.784, 474.113 )
@@ -266,10 +267,12 @@ position = Vector2( 940.609, 197.912 )
 [node name="Area2D4" parent="." instance=ExtResource( 27 )]
 position = Vector2( 731.93, 2529.14 )
 rotation = -0.572468
+forceCenter = true
 
 [node name="Area2D3" parent="." instance=ExtResource( 27 )]
 position = Vector2( 605.926, 3293.51 )
 rotation = -3.42783
+forceCenter = true
 
 [node name="Bumper6" parent="." instance=ExtResource( 8 )]
 position = Vector2( 779.248, 3182.33 )

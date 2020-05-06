@@ -106,8 +106,6 @@ public class Enemy : RigidBody2D
 	// RIGIDBODY2D SIGNAL
 	private void Fly(Node node)
 	{
-		Change();
-
 		if (node.GetType() == typeof(Ball))
 		{
 			
@@ -115,8 +113,12 @@ public class Enemy : RigidBody2D
 			// bumper
 			RigidBody2D rigid = node as RigidBody2D;
 			Vector2 rigidDir = GlobalPosition.DirectionTo(rigid.GlobalPosition).Normalized();
-			rigid.ApplyImpulse(GlobalPosition, rigidDir * strength);
+			rigid.ApplyCentralImpulse(LinearVelocity.Normalized() * -strength);
+			ApplyCentralImpulse(LinearVelocity.Normalized() * strength);
 		}
+
+
+		Change();
 
 		if (node.GetType() == typeof(Ball) && health > 0 && timer.TimeLeft <= 0)
 		{

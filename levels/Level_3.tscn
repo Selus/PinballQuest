@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://objects/sides/Island_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/sides/Side_12.tscn" type="PackedScene" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://objects/sides/Side_4.tscn" type="PackedScene" id=22]
 [ext_resource path="res://objects/bottom/Bottom_1.tscn" type="PackedScene" id=23]
 [ext_resource path="res://img/bg_1.png" type="Texture" id=24]
+[ext_resource path="res://objects/cage/Cage.tscn" type="PackedScene" id=25]
+[ext_resource path="res://objects/flyer/Dandelion.tscn" type="PackedScene" id=26]
 
 [node name="Level_3" type="Node2D"]
 
@@ -163,3 +165,18 @@ position = Vector2( 592.385, 1743 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 571.888, 2883.71 )
+
+[node name="Cage" parent="." instance=ExtResource( 25 )]
+position = Vector2( 446.715, 2739.71 )
+
+[node name="dandelion" parent="." instance=ExtResource( 26 )]
+position = Vector2( 615.542, 2203.74 )
+rotation = -0.354584
+
+[node name="dandelion2" parent="." instance=ExtResource( 26 )]
+position = Vector2( 691.997, 2159.42 )
+rotation = -0.354584
+
+[node name="dandelion3" parent="." instance=ExtResource( 26 )]
+position = Vector2( 755.155, 2115.09 )
+rotation = -0.354584

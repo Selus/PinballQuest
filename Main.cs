@@ -132,14 +132,14 @@ public class Main : Node2D
 	}
 	public void restartGame()
 	{
-		// points = 0;
-		// lives = 1;
-		// RemoveChild(GetNode("Level_3"));
-		// var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_3.tscn");
-		// var node = (Level)scene.Instance();
-		// camera.LimitBottom = 1000000;
-		// AddChild(node);
-		// GetTree().Paused = false;
-		// hideGUI();
+		points = 0;
+		lives = 1;
+		RemoveChild(GetNode("Level_3"));
+		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_3.tscn");
+		var node = (Node2D)scene.Instance();
+		camera.LimitBottom = 1000000;
+		AddChild(node);
+		GetTree().Paused = false;
+		hideGUI();
 	}
 }

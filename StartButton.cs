@@ -12,7 +12,7 @@ public class StartButton : Button
 
 	public override void _Pressed()
 	{
-		Main.GetInstance().startGame();
+		Main.GetInstance().restartGame();
 	}
 
 

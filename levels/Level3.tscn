@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://img/bg_1.png" type="Texture" id=1]
 [ext_resource path="res://objects/sides/Side1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/flyer/Dandelion.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/sides/Side2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/sides/Island1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/cage/Cage.tscn" type="PackedScene" id=6]
 
 [node name="Level3" type="Node2D"]
+show_behind_parent = true
 
 [node name="bg_1" type="Sprite" parent="."]
+visible = false
 position = Vector2( 4.42603, 0 )
 scale = Vector2( 1, 0.667784 )
 texture = ExtResource( 1 )
@@ -25,11 +29,37 @@ position = Vector2( 1079.51, 831.231 )
 rotation = 3.14159
 z_index = 10
 
+[node name="Side5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1079.51, 831.231 )
+rotation = 3.14159
+z_index = 10
+
 [node name="Side4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1080.12, 1662.34 )
+position = Vector2( 1077.73, 1664.73 )
+rotation = 3.14159
+z_index = 10
+
+[node name="Side6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1075.34, 1970.87 )
 rotation = 3.14159
 z_index = 10
 
 [node name="Side2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 831 )
 z_index = 10
+
+[node name="Cage" parent="." instance=ExtResource( 6 )]
+position = Vector2( 601.306, 1121.01 )
+z_index = 1
+
+[node name="flyer" parent="." instance=ExtResource( 3 )]
+position = Vector2( 205.617, 1808.93 )
+rotation = 1.51765
+
+[node name="flyer2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 141.617, 1760.93 )
+rotation = 1.51765
+
+[node name="flyer3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 130.365, 1759.76 )
+rotation = 1.05627

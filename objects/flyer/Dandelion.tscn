@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://objects/flyer/sprite/Dand_1.png" type="Texture" id=1]
+[ext_resource path="res://objects/flyer/sprite/Dand_2.png" type="Texture" id=2]
+[ext_resource path="res://objects/flyer/Dandelion.cs" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.2421
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="dandelion" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 0, -56 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( -0.175789, -110.284 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RigidBody2D"]
+position = Vector2( 0, -38 )
+frames = SubResource( 2 )
+
+[node name="Springing" type="DampedSpringJoint2D" parent="."]
+position = Vector2( 0.0797195, -259.038 )
+node_a = NodePath("../SpringingPin")
+node_b = NodePath("../RigidBody2D")
+length = 48.0
+stiffness = 4.0
+damping = 0.16
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../RootPin")
+softness = 4.0
+
+[node name="RootPin" type="KinematicBody2D" parent="."]
+
+[node name="SpringingPin" type="KinematicBody2D" parent="."]
+position = Vector2( 0.449768, -130.766 )

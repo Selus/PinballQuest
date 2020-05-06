@@ -5,9 +5,9 @@ public class Enemy : RigidBody2D
 {
 	[Export] private float speed = 128f;
 	[Export] private float distance = 256f;
-	[Export] private int randomness = 64;
+	[Export] private int randomness = 32;
 	[Export] private int health = 3;
-	[Export] private string ball;
+	[Export] private int strength = 512;
 
 	private Vector2 startPos;
 	private bool returning = false;
@@ -32,7 +32,6 @@ public class Enemy : RigidBody2D
 		timer.Connect("timeout", this, "Timeout");
 
 		random = new RandomNumberGenerator();
-		System.Random seed = new System.Random();
 		random.Seed = this.GetInstanceId() + (ulong)System.DateTime.Now.Second;
 
 		Vector2 dir = new Vector2(random.RandfRange(-1f, 1f), random.RandfRange(-1f, 1f));
@@ -49,6 +48,7 @@ public class Enemy : RigidBody2D
 	{
 		if (health > 0)
 		{
+			
 			if (GlobalPosition.DistanceTo(startPos) > distance)
 			{
 				returning = true;
@@ -67,45 +67,8 @@ public class Enemy : RigidBody2D
 			if (returning == false && random.RandiRange(0, randomness) == randomness)
 			{
 				Change(true, -1f, 1f);
+				random.Seed = this.GetInstanceId() + (ulong)System.DateTime.Now.Second;
 			}
-		}
-	}
-
-
-	private void Fly(Node node)
-	{
-		Change();
-
-		if (node.GetType() == typeof(Ball) && health > 0 && timer.TimeLeft <= 0)
-		{
-			health--;
-			timer.Start();
-
-			spriteBee.Modulate -= Color.Color8(0, 50, 100, 0);
-
-			if (health <= 0)
-			{
-				spriteBee.Modulate = Color.Color8(200, 25, 25, 200);
-				CollisionMask = 0;
-				CollisionLayer = 0;
-				LinearVelocity = Vector2.Zero;
-				GravityScale = 1;
-				ApplyCentralImpulse(Vector2.Down * speed);
-				ApplyTorqueImpulse(speed);
-				timer.WaitTime = 10;
-				timer.Start();
-				anim.Stop();
-				audioDead.Play();
-			}
-		}
-	}
-
-
-	private void Timeout()
-	{
-		if (health <= 0)
-		{
-			this.RemoveAndSkip();
 		}
 	}
 
@@ -137,5 +100,56 @@ public class Enemy : RigidBody2D
 		tween.Stop(this);
 		tween.InterpolateProperty(this, "linear_velocity", start, newVelocity, time);
 		tween.Start();
+	}
+
+
+	// RIGIDBODY2D SIGNAL
+	private void Fly(Node node)
+	{
+		Change();
+
+		if (node.GetType() == typeof(Ball))
+        {
+			
+
+            // bumper
+			RigidBody2D rigid = node as RigidBody2D;
+			Vector2 rigidDir = GlobalPosition.DirectionTo(rigid.GlobalPosition).Normalized();
+			rigid.ApplyImpulse(GlobalPosition, rigidDir * strength);
+        }
+
+		if (node.GetType() == typeof(Ball) && health > 0 && timer.TimeLeft <= 0)
+		{
+			// health
+			health--;
+			timer.Start();
+			spriteBee.Modulate -= Color.Color8(0, 50, 100, 0);
+
+			// dead
+			if (health <= 0)
+			{
+				spriteBee.Modulate = Color.Color8(200, 25, 25, 200);
+				CollisionMask = 0;
+				CollisionLayer = 0;
+				LinearVelocity = Vector2.Zero;
+				GravityScale = 1;
+				ApplyCentralImpulse(Vector2.Down * speed);
+				ApplyTorqueImpulse(speed);
+				timer.WaitTime = 10;
+				timer.Start();
+				anim.Stop();
+				audioDead.Play();
+			}
+		}
+	}
+
+
+	// TIMER SIGNAL
+	private void Timeout()
+	{
+		if (health <= 0)
+		{
+			this.RemoveAndSkip();
+		}
 	}
 }

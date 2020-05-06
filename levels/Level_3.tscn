@@ -90,7 +90,7 @@ position = Vector2( 288.736, 2454.59 )
 rotation = -0.380482
 
 [node name="spring3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 784.09, 1570.45 )
+position = Vector2( 857.906, 866.396 )
 rotation = 2.53945
 
 [node name="Star2" parent="." instance=ExtResource( 11 )]
@@ -124,13 +124,10 @@ rotation = 1.90415
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Bumper" parent="." instance=ExtResource( 8 )]
-position = Vector2( 377.763, 1751.32 )
+position = Vector2( 355.997, 1759.48 )
 
 [node name="Bumper2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 509.837, 1910.62 )
-
-[node name="Bumper5" parent="." instance=ExtResource( 8 )]
-position = Vector2( 307.797, 3181.1 )
+position = Vector2( 511.197, 1925.58 )
 
 [node name="movable" parent="." instance=ExtResource( 31 )]
 position = Vector2( 710.808, -276.625 )
@@ -138,7 +135,7 @@ posOffset = Vector2( 150, 0 )
 time = 6.0
 
 [node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 673.148, -91.8696 )
+position = Vector2( 370.896, 2964.09 )
 
 [node name="Bumper4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 892.963, 2463.51 )
@@ -200,7 +197,7 @@ position = Vector2( 837.853, 2166.74 )
 position = Vector2( -0.362198, 2782.68 )
 
 [node name="Bumper3" parent="." instance=ExtResource( 8 )]
-position = Vector2( -419.938, 1514.2 )
+position = Vector2( 579.936, 1695.13 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 721.673, 2775.67 )
@@ -210,14 +207,6 @@ position = Vector2( 300.472, 3135.76 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bumpable"]
 polygon = PoolVector2Array( -6.80444, -24.2112, -33.1758, -127.938, 72.3094, 151.597 )
-
-[node name="Bumpable2" parent="." instance=ExtResource( 25 )]
-position = Vector2( 568.155, -968.156 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bumpable2"]
-position = Vector2( 251.584, -52.5568 )
-scale = Vector2( -1, 1 )
-polygon = PoolVector2Array( 160.621, 11.6726, 190.404, 153.366, 313.144, -41.5751, 204.844, -35.2576 )
 
 [node name="dandelion2" parent="." instance=ExtResource( 28 )]
 position = Vector2( 813.784, 474.113 )
@@ -274,9 +263,6 @@ position = Vector2( 605.926, 3293.51 )
 rotation = -3.42783
 forceCenter = true
 
-[node name="Bumper6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 779.248, 3182.33 )
-
 [node name="Star3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 191.785, 612.654 )
 
@@ -322,6 +308,26 @@ position = Vector2( 175.185, -1744.4 )
 [node name="Beehive" type="Sprite" parent="."]
 position = Vector2( 182.601, -3500.05 )
 texture = ExtResource( 32 )
+
+[node name="Start_Bumpable2" parent="." instance=ExtResource( 25 )]
+position = Vector2( 273.641, 3267.28 )
+z_index = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_Bumpable2"]
+position = Vector2( 39.0715, -88.0701 )
+z_index = 11
+polygon = PoolVector2Array( -41.9479, -167.389, 60.937, 107.873, -21.1904, -3.13428 )
+
+[node name="Start_Bumpable3" parent="." instance=ExtResource( 25 )]
+position = Vector2( 845.277, 3272.74 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+z_index = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_Bumpable3"]
+position = Vector2( 38.6655, -99.6567 )
+z_index = 11
+polygon = PoolVector2Array( -29.8116, -167.957, 72.8161, 106.531, 2.76862, -5.05591 )
 
 [node name="Start_Bottom_1" parent="." instance=ExtResource( 23 )]
 position = Vector2( 160.002, 2982.22 )
@@ -386,6 +392,26 @@ position = Vector2( 251.146, -2816.65 )
 position = Vector2( 825.13, -2826.57 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
+
+[node name="Start_2_Start_Bumpable5" parent="." instance=ExtResource( 25 )]
+position = Vector2( 195.567, -2507.83 )
+z_index = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_2_Start_Bumpable5"]
+position = Vector2( 97.6245, -139.295 )
+z_index = 11
+polygon = PoolVector2Array( -41.9479, -167.389, 60.937, 107.873, -21.1904, -3.13428 )
+
+[node name="Start_2_Start_Bumpable4" parent="." instance=ExtResource( 25 )]
+position = Vector2( 818.343, -2580.16 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+z_index = 11
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_2_Start_Bumpable4"]
+position = Vector2( 26.2819, -75.0322 )
+z_index = 11
+polygon = PoolVector2Array( -29.8116, -167.957, 72.8161, 106.531, 2.76862, -5.05591 )
 
 [node name="spring5" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1055.32, -2718.37 )

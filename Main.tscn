@@ -27,7 +27,7 @@ pause_mode = 2
 
 [node name="Level_3" parent="." instance=ExtResource( 3 )]
 pause_mode = 1
-position = Vector2( -7.40247, 62.921 )
+position = Vector2( 42.5641, -179.51 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1.16632, 37.3235 )

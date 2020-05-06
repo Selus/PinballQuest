@@ -16,9 +16,10 @@
 friction = 0.1
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 40.0
+radius = 30.7366
 
 [node name="Ball" type="RigidBody2D"]
+z_index = 10
 collision_layer = 3
 collision_mask = 3
 physics_material_override = SubResource( 1 )
@@ -26,7 +27,7 @@ continuous_cd = 2
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 5 )
-velocityMax = 2048.0
+velocityMax = 10240.0
 angularVelocityMax = 64.0
 knock_0 = ExtResource( 4 )
 knock_1 = ExtResource( 3 )
@@ -54,14 +55,14 @@ mode = 3
 range_item_cull_mask = 2
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.64, 0.64 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 light_mask = 2
-scale = Vector2( 0.64, 0.64 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
 
 [node name="Sprite3" type="Sprite" parent="."]
-scale = Vector2( 0.64, 0.64 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )

@@ -19,6 +19,10 @@ config/name="PinballQuest"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Level="*res://Level.cs"
+
 [display]
 
 window/size/width=1080

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/flipper/Flipper.cs" type="Script" id=1]
+[ext_resource path="res://img/Flipper.png" type="Texture" id=2]
+
+[node name="FlipperRight" type="KinematicBody2D" groups=[
+"FlipperRight",
+]]
+rotation = -0.436332
+collision/safe_margin = 0.16
+motion/sync_to_physics = true
+script = ExtResource( 1 )
+angleEnd = 30.0
+time = 2.0
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( -32, 0 )
+rotation = 1.5708
+polygon = PoolVector2Array( -28.2025, -38.4724, -0.145774, -59.9602, 27.8412, -39.3944, 18.934, 103.002, 13.9032, 123.241, 5.76098, 125.42, -0.0328341, 111.443, -11.1961, 70.9153, -19.7879, 29.7078 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Flipper" type="Sprite" parent="."]
+position = Vector2( -58.9939, 9.15654 )
+rotation = 2.61799
+texture = ExtResource( 2 )

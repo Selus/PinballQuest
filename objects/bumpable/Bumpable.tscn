@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/bumper/Bumper.cs" type="Script" id=1]
+
+[node name="Bumpable" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+mode = 3
+contacts_reported = 10
+contact_monitor = true
+script = ExtResource( 1 )

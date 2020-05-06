@@ -53,8 +53,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Camera2D.cs" />
+    <Compile Include="BallCamera.cs" />
     <Compile Include="HUD.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="levels\Level_0.cs" />
+    <Compile Include="levels\Level_1.cs" />
+    <Compile Include="levels\Level_2.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="objects\ball\Ball.cs" />
     <Compile Include="objects\bumper\Bumper.cs" />

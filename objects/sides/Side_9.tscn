@@ -3,6 +3,7 @@
 [ext_resource path="res://objects/sides/sprites/Side_9_green.png" type="Texture" id=1]
 
 [node name="Side_9" type="Node2D"]
+z_index = 20
 
 [node name="Side_9_green" type="Sprite" parent="."]
 position = Vector2( 0, -14 )

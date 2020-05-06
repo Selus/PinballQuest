@@ -3,6 +3,7 @@
 [ext_resource path="res://objects/bottom/sprites/Bottom_1_green.png" type="Texture" id=2]
 
 [node name="Bottom_1" type="Node2D"]
+z_index = 20
 
 [node name="Bottom_1_green" type="Sprite" parent="."]
 position = Vector2( -11, -7 )
@@ -13,4 +14,4 @@ flip_h = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -1, 204, 109.9, 296, 116.6, 296, 125, 285.2, 125, 280, 19, 193.1, 19, 0, -1, 0 )
+polygon = PoolVector2Array( -1, 204, 109.9, 296, 116.6, 296, 125, 285.2, 125, 280, 19, 193.1, 19, 0, 9.08418, -3.85133, -1, 0 )

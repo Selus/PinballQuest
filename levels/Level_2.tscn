@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://levels/Level_2.cs" type="Script" id=1]
+[ext_resource path="res://objects/flipper/FlipperRight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/sides/Side_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/flipper/FlipperLeft.tscn" type="PackedScene" id=4]
+
+[node name="Level_2" type="Node2D"]
+script = ExtResource( 1 )
+Height = 470.0
+CheckPoint = true
+
+[node name="Side_1" parent="." instance=ExtResource( 3 )]
+
+[node name="Side_2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1080, 0 )
+scale = Vector2( -1, 1 )
+
+[node name="FlipperLeft" parent="." instance=ExtResource( 4 )]
+position = Vector2( 177.98, 352.78 )
+
+[node name="FlipperRight" parent="." instance=ExtResource( 2 )]
+position = Vector2( 893.54, 352.78 )

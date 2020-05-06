@@ -5,26 +5,29 @@
 [ext_resource path="res://objects/sides/Side_6.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/flipper/FlipperLeft.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/flipper/FlipperRight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/bumper/Bumper.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/sides/Side_7.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/Level_0.cs" type="Script" id=8]
 
 [node name="Level_0" type="Node2D"]
 position = Vector2( 0, 163 )
+script = ExtResource( 8 )
+Height = 600.0
+CheckPoint = true
 
 [node name="Bottom_1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 200, 106 )
+position = Vector2( 184.248, 116.024 )
 
 [node name="Bottom_2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 297.68, 42.1122 )
+position = Vector2( 265.604, 73.4726 )
 
 [node name="Side_6" parent="." instance=ExtResource( 3 )]
 
 [node name="Bottom_4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 880, 106 )
+position = Vector2( 892.244, 125.045 )
 scale = Vector2( -1, 1 )
 
 [node name="Bottom_3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 792.344, 49.2721 )
+position = Vector2( 811.389, 77.8401 )
 scale = Vector2( -1, 1 )
 
 [node name="Side_7" parent="." instance=ExtResource( 3 )]
@@ -32,13 +35,10 @@ position = Vector2( 1080, 0 )
 scale = Vector2( -1, 1 )
 
 [node name="FlipperLeft" parent="." instance=ExtResource( 4 )]
-position = Vector2( 349.231, 407.184 )
+position = Vector2( 338.753, 451.257 )
 
 [node name="FlipperRight" parent="." instance=ExtResource( 5 )]
-position = Vector2( 730.769, 405.752 )
-
-[node name="Bumper" parent="." instance=ExtResource( 6 )]
-position = Vector2( 537.116, 534.204 )
+position = Vector2( 735.289, 454.789 )
 
 [node name="Side_9" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, -162.659 )
@@ -46,3 +46,14 @@ position = Vector2( 0, -162.659 )
 [node name="Side_10" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1080, -162.659 )
 scale = Vector2( -1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 98.258, 40.1495, 261.548, 68.1421, 254.55, 84.471, 93.5925, 57.6449 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2( 720.807, 32.658 )
+polygon = PoolVector2Array( 89.3588, 41.835, 261.652, -5.63358, 270.879, 21.4878, 97.0917, 63.4766 )

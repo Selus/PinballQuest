@@ -3,6 +3,7 @@
 [ext_resource path="res://objects/sides/sprites/Island_2_green.png" type="Texture" id=2]
 
 [node name="Island_2" type="Node2D"]
+z_index = 20
 
 [node name="Island_2_green" type="Sprite" parent="."]
 texture = ExtResource( 2 )

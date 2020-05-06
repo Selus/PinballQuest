@@ -9,6 +9,7 @@ public class Main : Node2D
 	private BallCamera camera;
 	private List<Ball> balls = new List<Ball>();
 	private List<Checkpoint> checkpoints = new List<Checkpoint>();
+	private List<Flipper> flippers = new List<Flipper>();
 	private Checkpoint currentCheckpoint;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -16,19 +17,6 @@ public class Main : Node2D
 		instance = this;
 		GetTree().Paused = true;
 		camera = GetNode("BallCamera") as BallCamera;
-		var children = GetNode("Level_3").GetChildren();
-		foreach (Node child in children)
-		{
-			if (child.GetType() == typeof(Checkpoint))
-			{
-				checkpoints.Add(child as Checkpoint);
-			}
-			if (child.GetType() == typeof(Ball))
-			{
-				balls.Add(child as Ball);
-			}
-		}
-		// generateMap();
 	}
 
 	public override void _Process(float delta)
@@ -49,6 +37,20 @@ public class Main : Node2D
 					}
 				}
 		 	}
+			if(flippers.Count != 0)
+		 	{
+		 		for(int i = 0; i < flippers.Count ; i++)
+				{
+					var flipper = flippers[i];
+					if(flipper.folded == true)
+					{
+						if(ball.Position.y < flipper.Position.y)
+						{
+							flipper.Unfold();
+						}
+					}
+				}
+			}
 		}
 
 
@@ -139,6 +141,26 @@ public class Main : Node2D
 		var node = (Node2D)scene.Instance();
 		camera.LimitBottom = 1000000;
 		AddChild(node);
+		var childrenCount = node.GetChildCount();
+		if(childrenCount != 0)
+		{
+			for(int i = 0;i < childrenCount ; i++)
+			{
+				var child = GetNode("Level_3").GetChild(i);
+				if (child.GetType() == typeof(Checkpoint))
+				{
+					checkpoints.Add(child as Checkpoint);
+				}
+				if (child.GetType() == typeof(Ball))
+				{
+					balls.Add((Ball)child);
+				}
+				if (child.GetType() == typeof(Flipper))
+				{
+					flippers.Add(child as Flipper);
+				}
+			}
+		}
 		GetTree().Paused = false;
 		hideGUI();
 	}

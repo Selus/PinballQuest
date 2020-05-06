@@ -58,13 +58,11 @@ public class Cage : Node2D
     {
         if (node.GetType() == typeof(Ball))
         {
-            // bumper
+			// bumper
 			RigidBody2D rigid = node as RigidBody2D;
-
-            hamster.ApplyCentralImpulse(rigid.LinearVelocity.Normalized() * strength);
-
 			Vector2 rigidDir = GlobalPosition.DirectionTo(rigid.GlobalPosition).Normalized();
-			rigid.ApplyCentralImpulse(rigidDir * strength);
+			rigid.ApplyCentralImpulse(hamster.LinearVelocity.Normalized() * -strength);
+			hamster.ApplyCentralImpulse(hamster.LinearVelocity.Normalized() * strength);
         }
 
         if (node.GetType() == typeof(Ball) && timer.TimeLeft == 0 && hit == 0)

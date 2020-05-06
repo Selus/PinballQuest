@@ -6,8 +6,8 @@
 [ext_resource path="res://objects/cage/sprites/Anim.tres" type="SpriteFrames" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 83.428
-height = 26.4307
+radius = 43.1288
+height = 16.4029
 
 [sub_resource type="Animation" id=2]
 length = 0.5
@@ -195,8 +195,8 @@ contact_monitor = true
 [node name="Hook" type="Position2D" parent="Hamster"]
 
 [node name="Position2D" type="Position2D" parent="Hamster"]
-position = Vector2( 8, 74 )
-scale = Vector2( 0.16, 0.16 )
+position = Vector2( -2, 36 )
+scale = Vector2( 0.08, 0.08 )
 
 [node name="Hamster_body" type="Sprite" parent="Hamster/Position2D"]
 position = Vector2( -3.24146, -8.61835 )
@@ -238,7 +238,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hamster"]
-position = Vector2( 5.8757, 71.9034 )
+position = Vector2( -3.25307, 36.1826 )
 rotation = 1.5708
 shape = SubResource( 1 )
 

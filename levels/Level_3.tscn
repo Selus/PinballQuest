@@ -125,7 +125,7 @@ posOffset = Vector2( 150, 0 )
 time = 6.0
 
 [node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 502.263, -1364.56 )
+position = Vector2( 582.263, -1372.56 )
 
 [node name="Bottom_2" parent="." instance=ExtResource( 20 )]
 position = Vector2( 266.996, 3009.17 )
@@ -234,7 +234,6 @@ polygon = PoolVector2Array( -6.80444, -24.2112, -33.1758, -127.938, 72.3094, 151
 [node name="dandelion2" parent="." instance=ExtResource( 28 )]
 position = Vector2( 813.784, 474.113 )
 rotation = -0.380482
-scale = Vector2( 1, 1 )
 
 [node name="dandelion" parent="." instance=ExtResource( 28 )]
 position = Vector2( 812.026, 477.629 )

@@ -62,6 +62,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="objects\ball\Ball.cs" />
     <Compile Include="objects\booster\Booster.cs" />
+    <Compile Include="objects\bumpable\Bumpable.cs" />
     <Compile Include="objects\bumper\Bumper.cs" />
     <Compile Include="objects\cage\Cage.cs" />
     <Compile Include="objects\Checkpoint\Checkpoint.cs" />

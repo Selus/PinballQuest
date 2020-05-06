@@ -24,7 +24,7 @@ public class Spring : RigidBody2D
 		if (node.GetType() == typeof(Ball))
 		{
 			RigidBody2D rigid = node as RigidBody2D;
-			rigid.ApplyImpulse(GlobalPosition, direction * strength);
+			rigid.LinearVelocity =  direction * strength;
 			animation.Play("Spring");
 		}
 	}

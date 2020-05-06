@@ -3,7 +3,8 @@ using System;
 
 public class Booster : Area2D
 {
-	[Export] private float strength = 2048f;
+	[Export] private float minVelocity = 2048f;
+	[Export] private float multipler = 1;
     [Export] private bool forceCenter = false;
 
 	private Vector2 direction;
@@ -26,22 +27,22 @@ public class Booster : Area2D
 	{   
 		if (node.GetType() == typeof(Ball))
 		{
-            GD.Print("Booster");
 			RigidBody2D rigid = node as RigidBody2D;
             
             float absVelocity = Mathf.Sqrt(rigid.LinearVelocity.x * rigid.LinearVelocity.x + rigid.LinearVelocity.y * rigid.LinearVelocity.y);
 
             if (forceCenter)
             {
+				rigid.Sleeping = true;
                 rigid.GlobalPosition = GlobalPosition;
             }
 
-            if (absVelocity <= strength)
+            if (absVelocity <= minVelocity)
             {
-                absVelocity = strength;    
+                absVelocity = minVelocity;    
             }
 
-            rigid.LinearVelocity = direction * absVelocity;
+            rigid.LinearVelocity = direction * absVelocity * multipler;
             
 			animation.Play("Color");
 		}

@@ -66,7 +66,7 @@ script = ExtResource( 1 )
 strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 37.17, -57.4713, 105.444, -13.3239, 60.2704, 64.1908, 0.209412, 65.2174, 0.209412, -57.9846 )
+polygon = PoolVector2Array( 22.975, -61.259, 21.6146, 63.8954, 0.209412, 65.2174, 0.209412, -57.9846 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 154.712, 0 )

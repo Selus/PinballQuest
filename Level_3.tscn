@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://img/Plank.png" type="Texture" id=1]
+[ext_resource path="res://objects/sides/Side_12.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/sides/Side_10.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/movable/movable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/sides/Side_11.tscn" type="PackedScene" id=5]
+
+[node name="Level_3" type="Node2D"]
+
+[node name="Side_11" parent="." instance=ExtResource( 5 )]
+
+[node name="Side_12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 1180 )
+
+[node name="Side_10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1080, 0 )
+scale = Vector2( -1, 1 )
+
+[node name="movable" parent="." instance=ExtResource( 4 )]
+position = Vector2( -469.836, 579.941 )
+posOffset = Vector2( 50, 0 )
+
+[node name="Plank" type="Sprite" parent="movable"]
+position = Vector2( 968.271, -328.088 )
+scale = Vector2( 1.13821, 1 )
+texture = ExtResource( 1 )

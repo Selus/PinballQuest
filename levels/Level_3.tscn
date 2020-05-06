@@ -6,10 +6,10 @@
 [ext_resource path="res://objects/sides/Island_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/sides/Side_11.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/sides/Side_1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://objects/enemy/enemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://objects/bumper/bumper.tscn" type="PackedScene" id=8]
-[ext_resource path="res://objects/flipper/flipperLeft.tscn" type="PackedScene" id=9]
-[ext_resource path="res://objects/spring/spring.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/bumper/Bumper.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/flipper/FlipperLeft.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/spring/Spring.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/stars/Stars.tscn" type="PackedScene" id=11]
 [ext_resource path="res://objects/sides/Island_3.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=13]
@@ -20,13 +20,12 @@
 [ext_resource path="res://objects/sides/Side_9.tscn" type="PackedScene" id=18]
 [ext_resource path="res://objects/sides/Side_2.tscn" type="PackedScene" id=19]
 [ext_resource path="res://objects/bottom/Bottom_2.tscn" type="PackedScene" id=20]
-[ext_resource path="res://objects/flipper/flipperRight.tscn" type="PackedScene" id=21]
+[ext_resource path="res://objects/flipper/FlipperRight.tscn" type="PackedScene" id=21]
 [ext_resource path="res://objects/sides/Side_4.tscn" type="PackedScene" id=22]
 [ext_resource path="res://objects/bottom/Bottom_1.tscn" type="PackedScene" id=23]
 [ext_resource path="res://img/bg_1.png" type="Texture" id=24]
 
 [node name="Level_3" type="Node2D"]
-position = Vector2( 0.522949, -1665.24 )
 
 [node name="bg_1" type="Sprite" parent="."]
 position = Vector2( 0, 854.993 )

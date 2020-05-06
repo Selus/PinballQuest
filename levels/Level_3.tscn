@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://objects/sides/Island_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/sides/Side_12.tscn" type="PackedScene" id=2]
@@ -31,21 +31,31 @@
 [ext_resource path="res://objects/sides/Side_7.tscn" type="PackedScene" id=29]
 [ext_resource path="res://objects/cage/Cage.tscn" type="PackedScene" id=30]
 [ext_resource path="res://objects/movable/Movable.tscn" type="PackedScene" id=31]
+[ext_resource path="res://img/Beehive.png" type="Texture" id=32]
 
 [node name="Level_3" type="Node2D"]
+
+[node name="bg_2" type="Sprite" parent="."]
+position = Vector2( 543.401, -542.472 )
+scale = Vector2( 0.942393, 0.942393 )
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg_3" type="Sprite" parent="."]
+position = Vector2( 543.401, -3336.62 )
+scale = Vector2( 0.942393, 0.942393 )
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="bg_1" type="Sprite" parent="."]
 position = Vector2( 0, 854.993 )
 scale = Vector2( 0.942393, 0.942393 )
 texture = ExtResource( 24 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="bg_1" type="Sprite" parent="bg_1"]
-position = Vector2( 576.618, -1482.89 )
-texture = ExtResource( 24 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -60,6 +70,9 @@ position = Vector2( -2.60938, -1249.87 )
 
 [node name="Side_23" parent="." instance=ExtResource( 2 )]
 position = Vector2( -0.558838, -1733.8 )
+
+[node name="Side_24" parent="." instance=ExtResource( 2 )]
+position = Vector2( -38.1195, -2987.28 )
 
 [node name="Side_10" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1082.39, 234.382 )
@@ -106,7 +119,7 @@ scale = Vector2( 1, -1 )
 position = Vector2( 399.146, 615.231 )
 
 [node name="Island_6" parent="." instance=ExtResource( 12 )]
-position = Vector2( 399.445, -1492.11 )
+position = Vector2( 531.112, -1802.93 )
 rotation = 1.90415
 scale = Vector2( 0.5, 0.5 )
 
@@ -125,10 +138,7 @@ posOffset = Vector2( 150, 0 )
 time = 6.0
 
 [node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 502.263, -1364.56 )
-
-[node name="Bottom_2" parent="." instance=ExtResource( 20 )]
-position = Vector2( 266.996, 3009.17 )
+position = Vector2( 594.137, -3637.43 )
 
 [node name="Bumper4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 892.963, 2463.51 )
@@ -150,25 +160,6 @@ position = Vector2( 707.717, 2405.32 )
 rotation = -0.553269
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bottom_5" parent="." instance=ExtResource( 20 )]
-position = Vector2( 836.98, 2999.25 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
-
-[node name="Bottom_1" parent="." instance=ExtResource( 23 )]
-position = Vector2( 160.002, 2982.22 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="Bottom_3" parent="." instance=ExtResource( 23 )]
-position = Vector2( 934.388, 2984.03 )
-scale = Vector2( -1.5, 1.5 )
-
-[node name="FlipperLeft2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 375.691, 3440.47 )
-
-[node name="FlipperRight" parent="." instance=ExtResource( 21 )]
-position = Vector2( 730.793, 3442.52 )
-
 [node name="Side_8" parent="." instance=ExtResource( 16 )]
 position = Vector2( -1.06073, 2131.21 )
 
@@ -184,7 +175,7 @@ rotation = -3.14159
 scale = Vector2( 1, -1 )
 
 [node name="Side_13" parent="." instance=ExtResource( 3 )]
-position = Vector2( -1078.5, -1748.43 )
+position = Vector2( -150.618, -3619.98 )
 
 [node name="Side_4" parent="." instance=ExtResource( 19 )]
 position = Vector2( 848.343, -600.65 )
@@ -200,11 +191,7 @@ position = Vector2( 418.406, -144.906 )
 rotation = -3.42783
 
 [node name="Side_7" parent="." instance=ExtResource( 22 )]
-position = Vector2( -450.909, -1893.56 )
-
-[node name="Side_3" parent="." instance=ExtResource( 14 )]
-position = Vector2( 364.337, 3318.73 )
-scale = Vector2( -1, 1 )
+position = Vector2( 757.955, -2127.8 )
 
 [node name="Side_2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 837.853, 2166.74 )
@@ -234,7 +221,6 @@ polygon = PoolVector2Array( -6.80444, -24.2112, -33.1758, -127.938, 72.3094, 151
 [node name="dandelion2" parent="." instance=ExtResource( 28 )]
 position = Vector2( 813.784, 474.113 )
 rotation = -0.380482
-scale = Vector2( 1, 1 )
 
 [node name="dandelion" parent="." instance=ExtResource( 28 )]
 position = Vector2( 812.026, 477.629 )
@@ -253,23 +239,23 @@ position = Vector2( 1092.92, -972.591 )
 scale = Vector2( -1, 1 )
 
 [node name="Side_16" parent="." instance=ExtResource( 19 )]
-position = Vector2( -739.396, 527.867 )
-
-[node name="Side_17" parent="." instance=ExtResource( 14 )]
-position = Vector2( 739.06, 3316.08 )
+position = Vector2( 994.957, -3072.12 )
 
 [node name="Side_18" parent="." instance=ExtResource( 22 )]
 position = Vector2( -1336.87, 1517.04 )
 
 [node name="Side_19" parent="." instance=ExtResource( 26 )]
-position = Vector2( -1834.25, -1561.77 )
+position = Vector2( 821.292, -3690.39 )
 
 [node name="Side_20" parent="." instance=ExtResource( 17 )]
-position = Vector2( 1090.54, -972.257 )
+position = Vector2( 1100.81, -968.832 )
 rotation = -3.14159
 
 [node name="Side_21" parent="." instance=ExtResource( 29 )]
 position = Vector2( -6.91553, -1894.84 )
+
+[node name="Side_25" parent="." instance=ExtResource( 29 )]
+position = Vector2( -81.1165, -3816.11 )
 
 [node name="FlipperLeft3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 432.421, 241.688 )
@@ -302,20 +288,20 @@ position = Vector2( 625.754, 1393.45 )
 rotation = -0.6353
 
 [node name="Bumper7" parent="." instance=ExtResource( 8 )]
-position = Vector2( 361.528, -1235.61 )
+position = Vector2( 323.114, -1200.54 )
 
 [node name="Bumper8" parent="." instance=ExtResource( 8 )]
-position = Vector2( 642.336, -1231.84 )
+position = Vector2( 700.792, -1210.13 )
+
+[node name="Bumper11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 676.732, -926.31 )
 
 [node name="Bumper9" parent="." instance=ExtResource( 8 )]
-position = Vector2( 507, -1076 )
-strength = 2000.0
-
-[node name="Bumper" parent="Bumper9" instance=ExtResource( 8 )]
-position = Vector2( 149.69, 149.69 )
+position = Vector2( 500.319, -1081.01 )
+strength = 1000.0
 
 [node name="Bumper10" parent="." instance=ExtResource( 8 )]
-position = Vector2( 351.158, -914.008 )
+position = Vector2( 329.446, -905.657 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 758.304, -748.121 )
@@ -330,5 +316,100 @@ rotation = -3.6809
 [node name="FlipperLeft4" parent="." instance=ExtResource( 9 )]
 position = Vector2( 175.185, -1744.4 )
 
-[node name="FlipperRight3" parent="." instance=ExtResource( 21 )]
-position = Vector2( 770.447, -1473.86 )
+[node name="Beehive" type="Sprite" parent="."]
+position = Vector2( 182.601, -3500.05 )
+texture = ExtResource( 32 )
+
+[node name="Start_Bottom_1" parent="." instance=ExtResource( 23 )]
+position = Vector2( 160.002, 2982.22 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Start_Bottom_3" parent="." instance=ExtResource( 23 )]
+position = Vector2( 934.388, 2984.03 )
+rotation = -3.14159
+scale = Vector2( 1.5, -1.5 )
+
+[node name="Start_FlipperLeft2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 375.691, 3440.47 )
+
+[node name="Start_FlipperRight" parent="." instance=ExtResource( 21 )]
+position = Vector2( 730.793, 3442.52 )
+
+[node name="Start_Side_17" parent="." instance=ExtResource( 14 )]
+position = Vector2( 739.06, 3316.08 )
+
+[node name="Start_Side_3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 364.337, 3318.73 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Start_Bottom_2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 266.996, 3009.17 )
+
+[node name="Start_Bottom_5" parent="." instance=ExtResource( 20 )]
+position = Vector2( 836.98, 2999.25 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Start_2_Start_Bottom_7" parent="." instance=ExtResource( 23 )]
+position = Vector2( 152.002, -2829.26 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Start_2_Start_Bottom_4" parent="." instance=ExtResource( 23 )]
+position = Vector2( 927.388, -2827.45 )
+rotation = -3.14159
+scale = Vector2( 1.5, -1.5 )
+
+[node name="Start_2_Start_FlipperLeft3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 363.841, -2385.35 )
+
+[node name="Start_2_Start_FlipperRight2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 718.943, -2383.3 )
+
+[node name="Start_2_Start_Side_18" parent="." instance=ExtResource( 14 )]
+position = Vector2( 727.21, -2509.74 )
+
+[node name="Start_2_Start_Side_4" parent="." instance=ExtResource( 14 )]
+position = Vector2( 352.487, -2507.09 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="Start_2_Start_Bottom_3" parent="." instance=ExtResource( 20 )]
+position = Vector2( 251.146, -2816.65 )
+
+[node name="Start_2_Start_Bottom_6" parent="." instance=ExtResource( 20 )]
+position = Vector2( 825.13, -2826.57 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="spring5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1055.32, -2718.37 )
+rotation = -2.15723
+
+[node name="spring6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 57.9813, -3733.35 )
+rotation = -0.380482
+
+[node name="Area2D5" parent="." instance=ExtResource( 27 )]
+position = Vector2( 517.106, -2106.28 )
+rotation = -2.15897
+
+[node name="Enemy5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 326.41, -3011.7 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 751.867, -2864.02 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 546.171, -2786.66 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 336.959, -3301.95 )
+scale = Vector2( -1, 1 )
+
+[node name="Enemy9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 621.769, -3310.57 )
+
+[node name="Enemy10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 577.421, -3071.77 )
+scale = Vector2( -1, 1 )

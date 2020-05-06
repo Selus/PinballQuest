@@ -90,7 +90,8 @@ public class Cage : Node2D
         
         if (node.GetType() == typeof(Ball) && timer.TimeLeft == 0 && hit == 1)
         {
-            GD.Print("Asdasd");
+            GD.Print("MULTIBALAAAAAAAAAAAAAALLLLL");
+            Main.GetInstance().MULTIBALL(node as Ball);
             this.RemoveAndSkip();
         }
     }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://objects/sides/Island_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/sides/Side_12.tscn" type="PackedScene" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://objects/cage/Cage.tscn" type="PackedScene" id=30]
 [ext_resource path="res://objects/movable/Movable.tscn" type="PackedScene" id=31]
 [ext_resource path="res://img/Beehive.png" type="Texture" id=32]
+[ext_resource path="res://objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=33]
 
 [node name="Level_3" type="Node2D"]
 
@@ -134,8 +135,8 @@ position = Vector2( 710.808, -276.625 )
 posOffset = Vector2( 150, 0 )
 time = 6.0
 
-[node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 370.896, 2964.09 )
+[node name="Ball2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 433.079, 2193.97 )
 
 [node name="Bumper4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 892.963, 2463.51 )
@@ -452,3 +453,6 @@ position = Vector2( 621.769, -3310.57 )
 [node name="Enemy10" parent="." instance=ExtResource( 7 )]
 position = Vector2( 577.421, -3071.77 )
 scale = Vector2( -1, 1 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 33 )]
+position = Vector2( 516.033, 3653.94 )

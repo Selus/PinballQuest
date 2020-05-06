@@ -66,7 +66,8 @@ script = ExtResource( 1 )
 strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 22.975, -61.259, 21.6146, 63.8954, 0.209412, 65.2174, 0.209412, -57.9846 )
+position = Vector2( 3.57492, -4.76657 )
+polygon = PoolVector2Array( 94.1686, -2.40009, 50.475, 67.9068, 1.22047, 69.8929, -1.56003, -52.8463, 43.7224, -38.5466 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 154.712, 0 )
@@ -87,6 +88,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 75, 67 )
 
 [node name="spring_leaf" type="Sprite" parent="Sprite/spring"]
-position = Vector2( 134.058, 35 )
+position = Vector2( 129.605, 38.1646 )
+rotation = 0.0349066
 scale = Vector2( 1.25, 1 )
 texture = ExtResource( 3 )

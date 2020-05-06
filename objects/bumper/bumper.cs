@@ -5,11 +5,17 @@ public class Bumper : RigidBody2D
 {
 	[Export] private float strength = 1024f;
 	
+	private AnimationPlayer anim;
+
 
 	public override void _Ready()
 	{
 		this.Connect("body_entered", this, "Fire");
+
+		anim = GetNode("anim") as AnimationPlayer;
+		// anim.Play("dance");
 	}
+
 
 	private void Fire(Node node)
 	{   
@@ -19,6 +25,8 @@ public class Bumper : RigidBody2D
 
 			Vector2 rigidDir = GlobalPosition.DirectionTo(rigid.GlobalPosition).Normalized();
 			rigid.ApplyImpulse(GlobalPosition, rigidDir * strength);
+
+			anim.Play("hit");
 		}
 	}
 }

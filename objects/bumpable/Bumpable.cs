@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Bumper : RigidBody2D
+public class Bumpable : RigidBody2D
 {
 	[Export] private float strength = 1024f;
 	

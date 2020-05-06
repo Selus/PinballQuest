@@ -1,16 +1,92 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://objects/spring/Spring.cs" type="Script" id=1]
+[ext_resource path="res://objects/spring/sprite/spring.png" type="Texture" id=2]
+[ext_resource path="res://objects/spring/sprite/spring_leaf.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 64.0
+[sub_resource type="Animation" id=1]
+resource_name = "Spring"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("spring:region_rect")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 75, 67 ), Rect2( 0, 0, 176.76, 67 ), Rect2( 0, 0, 75, 67 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spring:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.75, 1 ), Vector2( 0.856, 1 ), Vector2( 0.75, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spring/spring_leaf:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 134.058, 35 ), Vector2( 188.449, 34.7528 ), Vector2( 133.73, 42.259 ), Vector2( 133.215, 30.852 ), Vector2( 133.049, 38.0569 ), Vector2( 132.882, 30.852 ), Vector2( 132.835, 35.9875 ), Vector2( 132.816, 33.9333 ), Vector2( 134.058, 35 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spring/spring_leaf:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0, -10.0, 5.0, -5.0, 2.0, -2.0, 0.0 ]
+}
 
 [node name="spring" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
 mode = 3
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
-direction = Vector2( 1, 0 )
+strength = 1024.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 37.17, -57.4713, 105.444, -13.3239, 60.2704, 64.1908, 0.209412, 65.2174, 0.209412, -57.9846 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 154.712, 0 )
+
+[node name="Sprite" type="Position2D" parent="."]
+position = Vector2( -27, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+playback_speed = 4.0
+anims/Spring = SubResource( 1 )
+
+[node name="spring" type="Sprite" parent="Sprite"]
+position = Vector2( -24, -32 )
+scale = Vector2( 0.75, 1 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 75, 67 )
+
+[node name="spring_leaf" type="Sprite" parent="Sprite/spring"]
+position = Vector2( 134.058, 35 )
+scale = Vector2( 1.25, 1 )
+texture = ExtResource( 3 )

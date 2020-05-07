@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class AdButton : Button
+public class AdButton : TextureButton
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;

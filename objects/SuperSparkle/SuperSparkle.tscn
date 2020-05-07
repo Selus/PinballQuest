@@ -3,8 +3,11 @@
 [ext_resource path="res://objects/SuperSparkle/Sparkle.png" type="Texture" id=1]
 [ext_resource path="res://objects/SuperSparkle/SuperSparkle.cs" type="Script" id=2]
 
-[node name="SuperSparkle" type="Node2D"]
+[node name="SuperSparkle" type="Control"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sparkle" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )

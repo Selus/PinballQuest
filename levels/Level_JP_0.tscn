@@ -1,5 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
+[ext_resource path="res://levels/Level.cs" type="Script" id=1]
 [ext_resource path="res://objects/sides/Island_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/sides/Side_11.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/sides/Side_1.tscn" type="PackedScene" id=6]
@@ -8,7 +9,6 @@
 [ext_resource path="res://objects/flipper/FlipperLeft.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/stars/Stars.tscn" type="PackedScene" id=11]
 [ext_resource path="res://objects/sides/Island_3.tscn" type="PackedScene" id=12]
-[ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objects/sides/Side_3.tscn" type="PackedScene" id=14]
 [ext_resource path="res://objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=15]
 [ext_resource path="res://objects/sides/Side_6.tscn" type="PackedScene" id=17]
@@ -24,12 +24,13 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 68.0712
 
-[node name="Level_3" type="Node2D"]
+[node name="JP0" type="Node2D"]
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -5805.92, -13307.4, -14154.5, -7603.01, -714.68 ]
 }
 
-[node name="BG" type="Node" parent="."]
+[node name="BG" type="Node2D" parent="."]
 
 [node name="bg_3" type="Sprite" parent="BG"]
 position = Vector2( 541.643, 2348.2 )
@@ -48,12 +49,10 @@ texture = ExtResource( 24 )
 [node name="dandelion20" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 155.611, 3505.18 )
 rotation = 1.63767
-scale = Vector2( 1, 1 )
 
 [node name="dandelion23" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 31.9356, 2445.62 )
 rotation = 1.63767
-scale = Vector2( 1, 1 )
 
 [node name="dandelion27" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 556.932, 2006.22 )
@@ -62,7 +61,6 @@ rotation = 0.677739
 [node name="dandelion28" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 477.43, 2016.73 )
 rotation = -0.439606
-scale = Vector2( 1, 1 )
 
 [node name="dandelion29" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 505.13, 1966.03 )
@@ -71,22 +69,18 @@ rotation = 0.246748
 [node name="dandelion24" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 534.187, 2193.5 )
 rotation = 1.63767
-scale = Vector2( 1, 1 )
 
 [node name="dandelion26" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 1036.48, 2473.44 )
 rotation = -1.57225
-scale = Vector2( 1, 1 )
 
 [node name="dandelion25" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 493.57, 2283.51 )
 rotation = -1.57225
-scale = Vector2( 1, 1 )
 
 [node name="dandelion21" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 152.969, 3657.45 )
 rotation = 1.63767
-scale = Vector2( 1, 1 )
 
 [node name="dandelion22" parent="Walls" instance=ExtResource( 28 )]
 position = Vector2( 976.521, 3662.56 )
@@ -95,19 +89,16 @@ rotation = -1.53371
 [node name="Area2D11" parent="Walls" instance=ExtResource( 27 )]
 position = Vector2( 982.394, 2594.81 )
 rotation = 2.96706
-scale = Vector2( 1, 1 )
 minVelocity = 1024.0
 
 [node name="Area2D16" parent="Walls" instance=ExtResource( 27 )]
 position = Vector2( 978.693, 3111.14 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 minVelocity = 1024.0
 
 [node name="Area2D17" parent="Walls" instance=ExtResource( 27 )]
 position = Vector2( 92.2406, 3111.14 )
 rotation = 3.14159
-scale = Vector2( 1, 1 )
 minVelocity = 1024.0
 
 [node name="Area2D12" parent="Walls" instance=ExtResource( 27 )]
@@ -160,7 +151,6 @@ position = Vector2( 824.336, 3097.68 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 z_index = 11
-strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Start_2_Start_Bumpable6"]
 position = Vector2( 26.2819, -75.0322 )
@@ -170,7 +160,6 @@ polygon = PoolVector2Array( -29.8116, -167.957, 72.8161, 106.531, 2.76862, -5.05
 [node name="Start_2_Start_Bumpable9" parent="Walls" instance=ExtResource( 25 )]
 position = Vector2( -123.868, 2221.33 )
 z_index = 11
-strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Start_2_Start_Bumpable9"]
 position = Vector2( 54.0746, -87.0382 )
@@ -182,7 +171,6 @@ position = Vector2( 1190.43, 2154.78 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 z_index = 11
-strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Start_2_Start_Bumpable8"]
 position = Vector2( 26.2819, -77.1909 )
@@ -304,7 +292,6 @@ rotation = -1.26518
 [node name="Star37" parent="Walls" instance=ExtResource( 11 )]
 position = Vector2( 853.196, 1118.49 )
 rotation = 0.523019
-scale = Vector2( 1, 1 )
 
 [node name="Star43" parent="Walls" instance=ExtResource( 11 )]
 position = Vector2( 675.5, 745.395 )
@@ -469,9 +456,6 @@ folded = false
 
 [node name="Checkpoint" parent="." instance=ExtResource( 15 )]
 position = Vector2( 547.212, 3654.44 )
-
-[node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 871.652, 2814.69 )
 
 [node name="Island_2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 108.492, 418.561 )

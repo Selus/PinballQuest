@@ -5,11 +5,11 @@
 [ext_resource path="res://objects/sides/Side_10.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/sides/Island_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/sides/Side_11.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/Level.cs" type="Script" id=6]
 [ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/flipper/FlipperLeft.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/spring/Spring.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/stars/Stars.tscn" type="PackedScene" id=11]
-[ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objects/sides/Side_3.tscn" type="PackedScene" id=14]
 [ext_resource path="res://objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=15]
 [ext_resource path="res://objects/sides/Side_2.tscn" type="PackedScene" id=19]
@@ -23,7 +23,8 @@
 [ext_resource path="res://objects/sides/Side_7.tscn" type="PackedScene" id=29]
 [ext_resource path="res://img/Beehive.png" type="Texture" id=32]
 
-[node name="Level_3" type="Node2D"]
+[node name="JP1" type="Node2D"]
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -5805.92, -13307.4, -14154.5, -7603.01 ]
 }
@@ -146,7 +147,6 @@ polygon = PoolVector2Array( -24.7009, -161.414, 73.2991, 98.5879, 2.76862, -5.05
 [node name="spring9" parent="Node2D" instance=ExtResource( 10 )]
 position = Vector2( 64.3167, 36.1385 )
 rotation = -0.226355
-scale = Vector2( 1, 1 )
 
 [node name="Booster2" parent="Node2D" instance=ExtResource( 27 )]
 position = Vector2( 684.01, 1608.71 )
@@ -476,10 +476,6 @@ position = Vector2( 270.494, 139.765 )
 [node name="Island_3" parent="Node2D/Island_1" instance=ExtResource( 4 )]
 position = Vector2( 832.163, 136.34 )
 scale = Vector2( -1, 1 )
-
-[node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 856.486, 948.869 )
-scale = Vector2( 0.942393, 0.942393 )
 
 [node name="Checkpoint" parent="." instance=ExtResource( 15 )]
 position = Vector2( 537.625, 1711.36 )

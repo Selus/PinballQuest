@@ -2,13 +2,13 @@
 
 [ext_resource path="res://objects/sides/Island_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/sides/Side_12.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/Level.cs" type="Script" id=3]
 [ext_resource path="res://objects/sides/Island_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/sides/Side_1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/enemy/Enemy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/flipper/FlipperLeft.tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/spring/Spring.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/stars/Stars.tscn" type="PackedScene" id=11]
-[ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objects/sides/Side_3.tscn" type="PackedScene" id=14]
 [ext_resource path="res://objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=15]
 [ext_resource path="res://objects/sides/Side_8.tscn" type="PackedScene" id=16]
@@ -25,7 +25,8 @@
 [ext_resource path="res://objects/booster/Booster.tscn" type="PackedScene" id=27]
 [ext_resource path="res://objects/flyer/Dandelion.tscn" type="PackedScene" id=28]
 
-[node name="Level_3" type="Node2D"]
+[node name="JP2" type="Node2D"]
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -5805.92, -13307.4, -14154.5, -7603.01, -3369.72 ]
 }
@@ -42,22 +43,6 @@ position = Vector2( 541.643, -2534.67 )
 scale = Vector2( 0.942393, 0.942393 )
 texture = ExtResource( 24 )
 
-[node name="bg_6" type="Sprite" parent="Node2D"]
-position = Vector2( 541.643, -11654 )
-scale = Vector2( 0.942393, 0.942393 )
-texture = ExtResource( 24 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="bg_5" type="Sprite" parent="Node2D"]
-position = Vector2( 543.401, -8874.04 )
-scale = Vector2( 0.942393, 0.942393 )
-texture = ExtResource( 24 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Star8" parent="Node2D" instance=ExtResource( 11 )]
 position = Vector2( 132.971, -751.848 )
 rotation = 0.996204
@@ -69,7 +54,6 @@ rotation = -0.258572
 [node name="Star19" parent="Node2D" instance=ExtResource( 11 )]
 position = Vector2( 228.414, -1436.44 )
 rotation = -1.05019
-scale = Vector2( 1, 1 )
 
 [node name="Star20" parent="Node2D" instance=ExtResource( 11 )]
 position = Vector2( 206.958, -1320.71 )
@@ -90,16 +74,6 @@ rotation = 2.19087
 [node name="Star15" parent="Node2D" instance=ExtResource( 11 )]
 position = Vector2( 217.502, 16.9544 )
 rotation = -1.8989
-scale = Vector2( 1, 1 )
-
-[node name="dandelion21" parent="Node2D" instance=ExtResource( 28 )]
-position = Vector2( 152.969, -7686.55 )
-rotation = 1.63767
-scale = Vector2( 1, 1 )
-
-[node name="dandelion22" parent="Node2D" instance=ExtResource( 28 )]
-position = Vector2( 976.521, -7681.44 )
-rotation = -1.53371
 
 [node name="Star30" parent="Node2D" instance=ExtResource( 11 )]
 position = Vector2( 831.22, -1399.55 )
@@ -143,7 +117,6 @@ position = Vector2( -68.6174, -795.443 )
 [node name="Side_27" parent="Node2D" instance=ExtResource( 18 )]
 position = Vector2( -32.9883, -1263.25 )
 rotation = 0.107604
-scale = Vector2( 1, 1 )
 
 [node name="Island_4" parent="Node2D" instance=ExtResource( 1 )]
 position = Vector2( 999.299, -1911.38 )
@@ -351,10 +324,7 @@ position = Vector2( 1106.36, -2850.65 )
 position = Vector2( 782.666, -1446.11 )
 
 [node name="Checkpoint" parent="." instance=ExtResource( 15 )]
-position = Vector2( 544.338, 825.498 )
-
-[node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 859.934, 168.277 )
+position = Vector2( 524.912, 957.166 )
 
 [node name="spring" parent="." instance=ExtResource( 10 )]
 position = Vector2( 58.5638, -1244.74 )

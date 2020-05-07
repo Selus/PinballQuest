@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://levels/Level_JP_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Level_JP_2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/Level_JP_0.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/Level_4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/HamsterStarter/HamsterStarter.tscn" type="PackedScene" id=5]
+
+[node name="SuperLevel" type="Node2D"]
+
+[node name="HamsterStarter" parent="." instance=ExtResource( 5 )]
+position = Vector2( 520.715, 774.905 )
+
+[node name="Level4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 10.8517, -15032.6 )
+
+[node name="JP0" parent="." instance=ExtResource( 3 )]
+position = Vector2( -9.19604, -1757.94 )
+
+[node name="JP1" parent="." instance=ExtResource( 1 )]
+position = Vector2( -22.1064, -9105.48 )
+
+[node name="JP2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -13.377, -3308.1 )

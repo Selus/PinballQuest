@@ -18,10 +18,6 @@ _global_script_class_icons={
 config/name="PinballQuest"
 run/main_scene="res://Main.tscn"
 
-[autoload]
-
-Level="*res://Level.cs"
-
 [display]
 
 window/size/width=1080

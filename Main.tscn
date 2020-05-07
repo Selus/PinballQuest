@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Main.cs" type="Script" id=1]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://levels/Level_4.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/SuperLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://audio/point.wav" type="AudioStream" id=4]
 [ext_resource path="res://other/CRT_ColorRect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://other/texture1.png" type="Texture" id=6]
@@ -78,8 +78,7 @@ pause_mode = 2
 position = Vector2( 1.16632, 37.3235 )
 rotation = -0.000906628
 
+[node name="SuperLevel" parent="." instance=ExtResource( 3 )]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
-
-[node name="Level_4" parent="." instance=ExtResource( 3 )]
-position = Vector2( -30.6523, 1619.27 )

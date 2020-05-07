@@ -20,7 +20,8 @@ public class Main : Node2D
 	public override void _Ready()
 	{
 		instance = this;
-		mainLevel = GetNode("Level_4");
+		mainLevel = GetNode("SuperLevel");
+		GD.Print(mainLevel);
 		GetTree().Paused = true;
 		camera = GetNode("BallCamera") as BallCamera;
 		audioPoint = camera.GetNode("AudioPoint") as AudioStreamPlayer2D;
@@ -37,11 +38,11 @@ public class Main : Node2D
 		 		for(int j = 0;j < checkpoints.Count ; j++)
 				{
 					var checkpoint = checkpoints[j];
-					if(ball.Position.y < checkpoint.Position.y-200)
+					if(ball.GlobalPosition.y < checkpoint.GlobalPosition.y-200)
 					{
 						currentCheckpoint = checkpoint;
 						checkpoints.Remove(checkpoint);
-						camera.queueLimit((int)(checkpoint.Position.y));
+						camera.queueLimit((int)(checkpoint.GlobalPosition.y));
 					}
 				}
 		 	}
@@ -52,15 +53,14 @@ public class Main : Node2D
 					var flipper = flippers[j];
 					if(flipper.folded == true)
 					{
-						if(ball.Position.y < flipper.Position.y)
+						if(ball.GlobalPosition.y < flipper.GlobalPosition.y)
 						{
 							flipper.Unfold();
 						}
 					}
 				}
 			}
-
-			if(ball.Position.y > currentCheckpoint.Position.y)
+			if(ball.GlobalPosition.y > currentCheckpoint.GlobalPosition.y)
 			{
 				if(balls.Count > 1)
 				{
@@ -143,9 +143,9 @@ public class Main : Node2D
 		audioPoint.PitchScale = Mathf.Clamp(0.75f + amount/5, 0.75f, 2f);
 		audioPoint.Play();
 		points += amount;
-		var superSparkle = (SuperSparkle)sparkle.Instance();
-		superSparkle.Position = balls[0].Position;
-		AddChild(superSparkle);
+		// var superSparkle = (SuperSparkle)sparkle.Instance();
+		// superSparkle.GlobalPosition = balls[0].GlobalPosition;
+		// AddChild(superSparkle);
 	}
 	public int getPoints()
 	{
@@ -157,7 +157,7 @@ public class Main : Node2D
 		var scene = (PackedScene)ResourceLoader.Load("res://objects/ball/Ball.tscn");
 		var newBall = (Ball)scene.Instance();
 		balls.Add(newBall);
-		newBall.Position = pos;
+		newBall.GlobalPosition = pos;
 		newBall.ApplyImpulse(GlobalPosition, new Vector2(0,-1) * 1024);
 		AddChild(newBall);
 		camera.dezoom();
@@ -198,19 +198,83 @@ public class Main : Node2D
 	}
 	public void restartGame()
 	{
+		GD.Print(mainLevel);
 		points = 0;
 		lives = 1;
+		if(balls.Count != 0)
+		{
+			for(int j = 0;j < balls.Count ; j++)
+			{
+				var eraser = balls[j];
+				eraser.GetParent().RemoveChild(this);
+				eraser.QueueFree();
+			}
+		}
 		balls = new List<Ball>();
+		if(checkpoints.Count != 0)
+		{
+			for(int j = 0;j < checkpoints.Count ; j++)
+			{
+				var eraser = checkpoints[j];
+				eraser.GetParent().RemoveChild(this);
+				eraser.QueueFree();
+			}
+		}
 		checkpoints = new List<Checkpoint>();
+		if(flippers.Count != 0)
+		{
+			for(int j = 0;j < flippers.Count ; j++)
+			{
+				var eraser = flippers[j];
+				eraser.GetParent().RemoveChild(this);
+				eraser.QueueFree();
+			}
+		}
 		flippers = new List<Flipper>();
 		currentCheckpoint = null;
+		removeAll(mainLevel);
+		RemoveChild(mainLevel);
 		mainLevel.QueueFree();
-		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_4.tscn");
+		var scene = (PackedScene)ResourceLoader.Load("res://levels/SuperLevel.tscn");
 		var node = (Node2D)scene.Instance();
 		camera.LimitBottom = 1000000;
 		camera.queuedLimit = 1000000;
 		AddChild(node);
 		mainLevel = node;
+		listerineChildren(mainLevel);
+		if(checkpoints.Count != 0)
+		{
+			for(int j = 0;j < checkpoints.Count ; j++)
+			{
+				var checkpoint = checkpoints[j];
+				if(currentCheckpoint == null)
+					currentCheckpoint = checkpoint;
+				if(checkpoint.GlobalPosition.y > currentCheckpoint.GlobalPosition.y)
+				{
+					currentCheckpoint = checkpoint;
+				}
+			}
+		}
+		GetTree().Paused = false;
+		HUD.GetInstance().hideAll();
+	}
+
+	private void removeAll(Node node)
+	{
+		var childrenCount = node.GetChildCount();
+		if(childrenCount == 0)
+			return;
+		
+		for(int i = 0;i < node.GetChildCount() ; i++)
+		{
+			var child = node.GetChild(i);
+			child.RemoveAndSkip();
+			child.QueueFree();
+		}
+		removeAll(node);
+	}
+	private void listerineChildren(Node node)
+	{
 		var childrenCount = node.GetChildCount();
 		if(childrenCount != 0)
 		{
@@ -233,9 +297,11 @@ public class Main : Node2D
 				{
 					starterHamster = (child as HamsterStarter);
 				}
+				if (child.GetType() == typeof(Level))
+				{
+					listerineChildren(child);
+				}
 			}
 		}
-		GetTree().Paused = false;
-		HUD.GetInstance().hideAll();
 	}
 }

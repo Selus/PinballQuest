@@ -93,6 +93,8 @@ public class Cage : Node2D
         
         if (node.GetType() == typeof(Ball) && timer.TimeLeft == 0 && hit == 1)
         {
+            GD.Print("MULTIBALAAAAAAAAAAAAAALLLLL");
+            Main.GetInstance().MULTIBALL(node as Ball);
             // points
             Main.GetInstance().addPoints(5);
             hamster.Sleeping = true;

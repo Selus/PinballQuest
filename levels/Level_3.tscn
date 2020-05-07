@@ -598,6 +598,7 @@ polygon = PoolVector2Array( -50.4691, 147.964, 42.5812, 129.871, 129.17, 101.439
 [node name="Start_Bumpable2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 273.641, 3267.28 )
 z_index = 11
+strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_Bumpable2"]
 position = Vector2( 39.0715, -88.0701 )
@@ -609,6 +610,7 @@ position = Vector2( 845.277, 3272.74 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 z_index = 11
+strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_Bumpable3"]
 position = Vector2( 38.6655, -99.6567 )

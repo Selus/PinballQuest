@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Main.cs" type="Script" id=1]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Level_3.tscn" type="PackedScene" id=3]
 [ext_resource path="res://audio/point.wav" type="AudioStream" id=4]
 [ext_resource path="res://other/CRT_ColorRect.tscn" type="PackedScene" id=5]
@@ -12,7 +12,7 @@
 [sub_resource type="AudioStreamRandomPitch" id=1]
 audio_stream = ExtResource( 4 )
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 8 )
 shader_param/dispAmt = 0.0
 shader_param/dispScale = 0.1
@@ -24,7 +24,7 @@ shader_param/screenCurvature = 1.04
 shader_param/curvatureDistance = 1.5
 shader_param/displace = ExtResource( 6 )
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=2]
 background_mode = 4
 auto_exposure_scale = 0.24
 auto_exposure_min_luma = 0.02
@@ -52,6 +52,7 @@ limit_right = 1080
 limit_bottom = 100000
 script = ExtResource( 7 )
 
+[node name="Tween" type="Tween" parent="BallCamera"]
 [node name="AudioPoint" type="AudioStreamPlayer2D" parent="BallCamera"]
 stream = SubResource( 1 )
 
@@ -59,7 +60,7 @@ stream = SubResource( 1 )
 z_index = 100
 
 [node name="CRT_ColorRect" parent="BallCamera/Position2D" instance=ExtResource( 5 )]
-material = SubResource( 2 )
+material = SubResource( 3 )
 margin_left = -947.56
 margin_top = -1056.04
 margin_right = 1052.44
@@ -79,4 +80,4 @@ position = Vector2( 1.16632, 37.3235 )
 rotation = -0.000906628
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 2 )

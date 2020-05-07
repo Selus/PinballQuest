@@ -12,7 +12,7 @@
 [ext_resource path="res://objects/spring/Spring.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/stars/Stars.tscn" type="PackedScene" id=11]
 [ext_resource path="res://objects/sides/Island_3.tscn" type="PackedScene" id=12]
-[ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=13]
+[ext_resource path="res://objects/HamsterStarter/HamsterStarter.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objects/sides/Side_3.tscn" type="PackedScene" id=14]
 [ext_resource path="res://objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=15]
 [ext_resource path="res://objects/sides/Side_8.tscn" type="PackedScene" id=16]
@@ -307,9 +307,6 @@ position = Vector2( 913.817, -1306.63 )
 [node name="Star32" parent="." instance=ExtResource( 11 )]
 position = Vector2( 944.791, -1187.9 )
 
-[node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 880.022, 2928.61 )
-
 [node name="Bumper4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 892.963, 2463.51 )
 rotation = -0.492183
@@ -598,7 +595,6 @@ polygon = PoolVector2Array( -50.4691, 147.964, 42.5812, 129.871, 129.17, 101.439
 [node name="Start_Bumpable2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 273.641, 3267.28 )
 z_index = 11
-strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_Bumpable2"]
 position = Vector2( 39.0715, -88.0701 )
@@ -610,7 +606,6 @@ position = Vector2( 845.277, 3272.74 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 z_index = 11
-strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_Bumpable3"]
 position = Vector2( 38.6655, -99.6567 )
@@ -1319,3 +1314,6 @@ shape = SubResource( 1 )
 
 [node name="Checkpoint" parent="." instance=ExtResource( 15 )]
 position = Vector2( 547.212, 3654.44 )
+
+[node name="Cage2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 528.61, 2954.8 )

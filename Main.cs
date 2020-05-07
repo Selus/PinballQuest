@@ -13,6 +13,7 @@ public class Main : Node2D
 	private Checkpoint currentCheckpoint;
 	private Node mainLevel;
 	private AudioStreamPlayer2D audioPoint;
+	private HamsterStarter starterHamster;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -87,7 +88,13 @@ public class Main : Node2D
 		{
 			restartGame();
 		}
-
+		if (Input.IsActionJustPressed("tap"))
+		{
+			if(starterHamster != null)
+			{
+				freeTheHamster();
+			}
+		}
 		if (Input.IsActionJustPressed("ui_left"))
 		{
 			GetTree().CallGroup("FlipperLeft", "Activate");
@@ -117,6 +124,11 @@ public class Main : Node2D
 		}
 	}
 
+	private void freeTheHamster()
+	{
+		starterHamster.TapTap();
+	}
+
 	//--------------------------------------api------------------------------------
 	private static Main instance=null;
 	static public Main GetInstance() 
@@ -136,6 +148,17 @@ public class Main : Node2D
 	{
 		return points;
 	}
+	public void throwBall(Vector2 pos)
+	{
+		starterHamster = null;
+		var scene = (PackedScene)ResourceLoader.Load("res://objects/ball/Ball.tscn");
+		var newBall = (Ball)scene.Instance();
+		balls.Add(newBall);
+		newBall.Position = pos;
+		newBall.ApplyImpulse(GlobalPosition, new Vector2(0,-1) * 1024);
+		AddChild(newBall);
+		camera.dezoom();
+	}
 	public void MULTIBALL(Ball ball)
 	{
 		var newBall = (Ball)ball.Duplicate();
@@ -146,6 +169,10 @@ public class Main : Node2D
 	public IList<Ball> getBalls()
 	{
 		return balls.AsReadOnly();
+	}
+	public HamsterStarter getStarter()
+	{
+		return starterHamster;
 	}
 	public void startGame()
 	{
@@ -197,6 +224,10 @@ public class Main : Node2D
 				if (child.GetType() == typeof(Flipper))
 				{
 					flippers.Add(child as Flipper);
+				}
+				if (child.GetType() == typeof(HamsterStarter))
+				{
+					starterHamster = (child as HamsterStarter);
 				}
 			}
 		}

@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public class Cage : Node2D
+public class HamsterStarter : Node2D
 {
-	[Export] private int strength = 512;
+	[Export] private int strength = 300;
 
 	private int hit = 0;
 
@@ -22,10 +22,8 @@ public class Cage : Node2D
 
 	public override void _Ready()
 	{
-		timer =  GetNode("Timer") as Timer;
 		hamster =  GetNode("Hamster") as RigidBody2D;
 
-		timer.Connect("timeout", this, "Timeout");
 		hamster.Connect("body_entered", this, "BodyEntered");
 
 		animEyes = GetNode("AnimEyes") as AnimationPlayer;
@@ -48,29 +46,19 @@ public class Cage : Node2D
 	}
 
 
-	public void Timeout()
+
+	public void TapTap()
 	{
+		var random = new RandomNumberGenerator();
+		random.Seed = this.GetInstanceId() + (ulong)System.DateTime.Now.Second;
+		var tx = random.RandiRange(0, 1);
+		if(tx == 0) tx = -1;
+		hamster.ApplyCentralImpulse(new Vector2(tx, 0) * strength);
 
-	}
-
-
-	public void BodyEntered(Node node)
-	{
-		if (node.GetType() == typeof(Ball))
+		if (hit < 3)
 		{
-			// bumper
-			RigidBody2D rigid = node as RigidBody2D;
-			Vector2 rigidDir = GlobalPosition.DirectionTo(rigid.GlobalPosition).Normalized();
-			rigid.ApplyCentralImpulse(hamster.LinearVelocity.Normalized() * -strength);
-			hamster.ApplyCentralImpulse(hamster.LinearVelocity.Normalized() * strength);
-		}
-
-		if (node.GetType() == typeof(Ball) && timer.TimeLeft == 0 && hit == 0)
-		{
-			timer.Start();
-
 			// hits
-			hit = 1;
+			hit++;
 
 			animEyes.PlaybackSpeed = 0.25f;
 			animHead.PlaybackSpeed = 0.25f;
@@ -86,15 +74,12 @@ public class Cage : Node2D
 			PupilL.Frame = 1;
 			PupilR.Frame = 1;
 			CageFront.Frame = 1;
-
-			// points
-			Main.GetInstance().addPoints(2);
 		}
 		
-		if (node.GetType() == typeof(Ball) && timer.TimeLeft == 0 && hit == 1)
+		if (hit == 3)
 		{
-			GD.Print("MULTIBALAAAAAAAAAAAAAALLLLL");
-			Main.GetInstance().MULTIBALL(node as Ball);
+			GD.Print("Start");
+			Main.GetInstance().throwBall(hamster.GlobalPosition);
 			// points
 			Main.GetInstance().addPoints(5);
 			hamster.Sleeping = true;

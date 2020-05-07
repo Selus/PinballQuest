@@ -61,7 +61,6 @@ public class BallCamera : Godot.Camera2D
 		tween.RemoveAll();
 		tween.InterpolateProperty(this, "Position",	this.Position, newPosition, 0.3f,Tween.TransitionType.Quad,Tween.EaseType.Out);
 		tween.Start();
-		GD.Print("LimitBottom",LimitBottom,"queuedLimit",queuedLimit,"(int)(newPosition.y + 1080/2)",(int)(newPosition.y + 1080/2));
 
 		if(LimitBottom > queuedLimit && (int)(newPosition.y + 1920/2) < LimitBottom && (int)(newPosition.y + 1920/2) < queuedLimit)
 		{

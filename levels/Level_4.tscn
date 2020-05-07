@@ -5,7 +5,7 @@
 [ext_resource path="res://objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/bottom/Bottom_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/flipper/FlipperRight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/HamsterStarter/HamsterStarter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/bottom/Bottom_1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://objects/bumpable/Bumpable.tscn" type="PackedScene" id=8]
 [ext_resource path="res://img/bg_1.png" type="Texture" id=9]
@@ -111,9 +111,6 @@ position = Vector2( 341.469, 1696.51 )
 [node name="FlipperRight" parent="." instance=ExtResource( 5 )]
 position = Vector2( 706.466, 1694.45 )
 
-[node name="Ball" parent="." instance=ExtResource( 6 )]
-position = Vector2( 828.691, 1278.47 )
-
 [node name="Checkpoint" parent="." instance=ExtResource( 3 )]
 position = Vector2( 534.22, 2375.23 )
 
@@ -127,6 +124,7 @@ rotation = -2.72969
 [node name="Booster3" parent="." instance=ExtResource( 15 )]
 position = Vector2( 740.42, -716.225 )
 rotation = -2.47662
+forceCenter = true
 
 [node name="Booster4" parent="." instance=ExtResource( 15 )]
 position = Vector2( 286.534, -1351.28 )
@@ -335,3 +333,6 @@ position = Vector2( 890.748, 0.288574 )
 
 [node name="Star7" parent="." instance=ExtResource( 31 )]
 position = Vector2( 793.115, -86.1859 )
+
+[node name="Cage2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 658.474, 988.181 )

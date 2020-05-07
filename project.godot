@@ -17,7 +17,6 @@ _global_script_class_icons={
 
 config/name="PinballQuest"
 run/main_scene="res://Main.tscn"
-boot_splash/image="res://other/splash.png"
 
 [display]
 

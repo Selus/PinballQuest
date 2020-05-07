@@ -57,6 +57,7 @@ script = ExtResource( 7 )
 
 [node name="AudioPoint" type="AudioStreamPlayer2D" parent="BallCamera"]
 stream = SubResource( 1 )
+volume_db = -15.01
 
 [node name="AudioMusic" type="AudioStreamPlayer2D" parent="BallCamera"]
 stream = ExtResource( 9 )

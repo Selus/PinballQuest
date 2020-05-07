@@ -203,9 +203,9 @@ __meta__ = {
 }
 
 [node name="NotInDemo" type="Label" parent="GameOver"]
-margin_top = 737.0
+margin_top = 417.0
 margin_right = 1080.0
-margin_bottom = 921.0
+margin_bottom = 601.0
 custom_fonts/font = SubResource( 2 )
 text = "Not available in demo"
 align = 1
@@ -215,9 +215,9 @@ __meta__ = {
 
 [node name="RestartButton2" type="TextureButton" parent="GameOver"]
 margin_left = 146.608
-margin_top = 1192.22
+margin_top = 872.22
 margin_right = 896.608
-margin_bottom = 1525.22
+margin_bottom = 1205.22
 texture_normal = ExtResource( 13 )
 texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 12 )
@@ -242,9 +242,9 @@ __meta__ = {
 
 [node name="ReviveButton3" type="TextureButton" parent="GameOver"]
 margin_left = 146.608
-margin_top = 808.22
+margin_top = 488.22
 margin_right = 896.608
-margin_bottom = 1141.22
+margin_bottom = 821.22
 disabled = true
 texture_normal = ExtResource( 13 )
 texture_pressed = ExtResource( 12 )

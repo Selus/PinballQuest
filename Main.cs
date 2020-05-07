@@ -13,8 +13,10 @@ public class Main : Node2D
 	private Checkpoint currentCheckpoint;
 	private Node mainLevel;
 	private AudioStreamPlayer2D audioPoint;
+	private AudioStreamPlayer2D audioMusic;
 	private HamsterStarter starterHamster;
 	private PackedScene sparkle = (PackedScene)ResourceLoader.Load("res://objects/SuperSparkle/SuperSparkle.tscn");
+	bool audiMusicPlaying = false;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -24,11 +26,21 @@ public class Main : Node2D
 		GD.Print(mainLevel);
 		GetTree().Paused = true;
 		camera = GetNode("BallCamera") as BallCamera;
+
 		audioPoint = camera.GetNode("AudioPoint") as AudioStreamPlayer2D;
+		audioMusic = camera.GetNode("AudioMusic") as AudioStreamPlayer2D;
+
+		audioMusic.Play();
 	}
 
 	public override void _Process(float delta)
 	{
+		// if (!audiMusicPlaying)
+		// {
+		// 	audioMusic.Play();
+		// 	audiMusicPlaying = true;
+		// }
+
 		//ball tracker
 		for(int i = 0;i < balls.Count ; i++)
 		{

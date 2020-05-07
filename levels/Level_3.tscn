@@ -135,7 +135,16 @@ posOffset = Vector2( 150, 0 )
 time = 6.0
 
 [node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 370.896, 2964.09 )
+position = Vector2( 556.824, -2167.17 )
+
+[node name="Star" parent="Ball" instance=ExtResource( 11 )]
+position = Vector2( 274.396, 767.617 )
+
+[node name="Star2" parent="Ball" instance=ExtResource( 11 )]
+position = Vector2( 356.993, 860.538 )
+
+[node name="Star3" parent="Ball" instance=ExtResource( 11 )]
+position = Vector2( 387.967, 979.272 )
 
 [node name="Bumper4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 892.963, 2463.51 )

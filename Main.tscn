@@ -12,7 +12,7 @@
 [sub_resource type="AudioStreamRandomPitch" id=1]
 audio_stream = ExtResource( 4 )
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 8 )
 shader_param/dispAmt = 0.0
 shader_param/dispScale = 0.1
@@ -24,7 +24,7 @@ shader_param/screenCurvature = 1.04
 shader_param/curvatureDistance = 1.5
 shader_param/displace = ExtResource( 6 )
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=3]
 background_mode = 4
 auto_exposure_scale = 0.24
 auto_exposure_min_luma = 0.02
@@ -59,7 +59,7 @@ stream = SubResource( 1 )
 z_index = 100
 
 [node name="CRT_ColorRect" parent="BallCamera/Position2D" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = -947.56
 margin_top = -1056.04
 margin_right = 1052.44
@@ -79,4 +79,4 @@ position = Vector2( 1.16632, 37.3235 )
 rotation = -0.000906628
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = SubResource( 3 )

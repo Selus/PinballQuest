@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://fonts/JandaManateeSolid.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://img/Button_up_inactive.png" type="Texture" id=1]
 [ext_resource path="res://HUD/StartButton.cs" type="Script" id=2]
 [ext_resource path="res://HUD/HUD.cs" type="Script" id=3]
 [ext_resource path="res://fonts/bubbly.tres" type="DynamicFont" id=4]
@@ -8,19 +8,19 @@
 [ext_resource path="res://HUD/ResumeButton.cs" type="Script" id=6]
 [ext_resource path="res://HUD/RestartButton.cs" type="Script" id=7]
 [ext_resource path="res://HUD/RevieButton.cs" type="Script" id=8]
-[ext_resource path="res://HUD/AdButton.cs" type="Script" id=9]
 [ext_resource path="res://img/Start_screen.png" type="Texture" id=10]
 [ext_resource path="res://fonts/JandaManateeBubble.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://img/Button_down.png" type="Texture" id=12]
 [ext_resource path="res://img/Button_up.png" type="Texture" id=13]
-
-[sub_resource type="DynamicFont" id=2]
-size = 60
-font_data = ExtResource( 11 )
+[ext_resource path="res://img/End_screen.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
-font_data = ExtResource( 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+font_data = ExtResource( 11 )
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -33,7 +33,7 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 modulate = Color( 1, 1, 1, 0.384314 )
 margin_right = 1080.0
-margin_bottom = 93.0
+margin_bottom = 200.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -69,6 +69,9 @@ texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 12 )
 texture_focused = ExtResource( 12 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Menu/StartButton"]
 margin_top = 74.4345
@@ -97,8 +100,8 @@ __meta__ = {
 margin_top = 400.708
 margin_right = 1077.06
 margin_bottom = 584.708
-custom_fonts/font = SubResource( 2 )
-text = "Super Hamster Rescue Force Saga"
+custom_fonts/font = SubResource( 1 )
+text = "Super Hamster Rescue Force"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -112,36 +115,65 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ResumeButton" type="Button" parent="Pause"]
-margin_left = 220.537
-margin_top = 952.931
-margin_right = 840.537
-margin_bottom = 1159.93
-custom_fonts/font = ExtResource( 5 )
-text = "RESUME"
+[node name="ResumeButton" type="TextureButton" parent="Pause"]
+margin_left = 146.608
+margin_top = 808.221
+margin_right = 896.608
+margin_bottom = 1141.22
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+texture_focused = ExtResource( 12 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RestartButton" type="Button" parent="Pause"]
-margin_left = 220.537
-margin_top = 1216.93
-margin_right = 840.537
-margin_bottom = 1423.93
+[node name="Label" type="Label" parent="Pause/ResumeButton"]
+margin_top = 74.4345
+margin_right = 750.0
+margin_bottom = 256.435
 custom_fonts/font = ExtResource( 5 )
-text = "RESTART"
+text = "RESUME"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartButton" type="TextureButton" parent="Pause"]
+margin_left = 146.608
+margin_top = 1192.22
+margin_right = 896.608
+margin_bottom = 1525.22
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+texture_focused = ExtResource( 12 )
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Pause/RestartButton"]
+margin_top = 74.4345
+margin_right = 750.0
+margin_bottom = 256.435
+custom_fonts/font = ExtResource( 5 )
+text = "RESTART"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TitleLabel" type="Label" parent="Pause"]
-margin_top = 717.724
+margin_top = 437.724
 margin_right = 1077.06
-margin_bottom = 901.724
+margin_bottom = 621.724
 custom_fonts/font = ExtResource( 4 )
-text = "PinHamster"
+text = "Pinball Quest
+"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -155,52 +187,84 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AdButton" type="Button" parent="GameOver"]
-margin_left = 76.9473
-margin_top = 748.902
-margin_right = 1002.95
-margin_bottom = 955.902
-custom_fonts/font = SubResource( 1 )
-disabled = true
-text = "Watch an ad to revive hamster"
-script = ExtResource( 9 )
+[node name="End_screen" type="Sprite" parent="GameOver"]
+texture = ExtResource( 14 )
+centered = false
+
+[node name="EndPoints" type="Label" parent="GameOver"]
+margin_top = 72.0
+margin_right = 1080.0
+margin_bottom = 256.0
+custom_fonts/font = ExtResource( 4 )
+text = "1202"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RevieButton" type="Button" parent="GameOver"]
-margin_left = 217.537
-margin_top = 1130.93
-margin_right = 837.537
-margin_bottom = 1337.93
-custom_fonts/font = ExtResource( 5 )
-disabled = true
-text = "REVIVE"
-script = ExtResource( 8 )
+[node name="NotInDemo" type="Label" parent="GameOver"]
+margin_top = 737.0
+margin_right = 1080.0
+margin_bottom = 921.0
+custom_fonts/font = SubResource( 2 )
+text = "Not available in demo"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RestartButton3" type="Button" parent="GameOver"]
-margin_left = 220.537
-margin_top = 1656.93
-margin_right = 840.537
-margin_bottom = 1863.93
-custom_fonts/font = ExtResource( 5 )
-text = "RESTART"
+[node name="RestartButton2" type="TextureButton" parent="GameOver"]
+margin_left = 146.608
+margin_top = 1192.22
+margin_right = 896.608
+margin_bottom = 1525.22
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+texture_disabled = ExtResource( 1 )
+texture_focused = ExtResource( 12 )
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TitleLabel" type="Label" parent="GameOver"]
-margin_left = -3.4248
-margin_top = 430.147
-margin_right = 1073.64
-margin_bottom = 614.147
-custom_fonts/font = ExtResource( 4 )
-text = "PinHamster"
+[node name="Label" type="Label" parent="GameOver/RestartButton2"]
+margin_top = 74.4345
+margin_right = 750.0
+margin_bottom = 256.435
+custom_fonts/font = ExtResource( 5 )
+text = "RESTART"
 align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReviveButton3" type="TextureButton" parent="GameOver"]
+margin_left = 146.608
+margin_top = 808.22
+margin_right = 896.608
+margin_bottom = 1141.22
+disabled = true
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+texture_disabled = ExtResource( 1 )
+texture_focused = ExtResource( 12 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GameOver/ReviveButton3"]
+margin_top = 74.4345
+margin_right = 750.0
+margin_bottom = 256.435
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
+text = "REVIUE"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

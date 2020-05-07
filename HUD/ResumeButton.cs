@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class ResumeButton : Button
+public class ResumeButton : TextureButton
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;

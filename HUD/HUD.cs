@@ -11,18 +11,21 @@ public class HUD : Control
 
 	// Declare member variables here. Examples:
 	private Label pointsText;
+	private Label endPointsText;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		instance = this;
 		pointsText = (Label)GetNode("Points");
+		endPointsText = (Label)GetNode("GameOver/EndPoints");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta)
 	{
 		pointsText.Text = Main.GetInstance().getPoints().ToString();
+		endPointsText.Text = Main.GetInstance().getPoints().ToString();
 	}
 
 	public void showMenu()

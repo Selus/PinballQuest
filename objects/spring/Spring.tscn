@@ -67,7 +67,7 @@ strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 3.57492, -4.76657 )
-polygon = PoolVector2Array( 94.1686, -2.40009, 50.475, 67.9068, 1.22047, 69.8929, -1.56003, -52.8463, 43.7224, -38.5466 )
+polygon = PoolVector2Array( 94.1686, -2.40009, 43.3946, 72.0254, -53.5462, 73.4853, -53.8382, -52.3625, 25.5832, -51.1946 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 154.712, 0 )

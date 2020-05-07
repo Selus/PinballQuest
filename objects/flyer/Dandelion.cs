@@ -6,6 +6,7 @@ public class Dandelion : Node2D
 
     RandomNumberGenerator random = new RandomNumberGenerator();
     AnimatedSprite animated;
+    RigidBody2D rigid;
 
     public override void _Ready()
     {
@@ -13,11 +14,13 @@ public class Dandelion : Node2D
         animated = GetNode("RigidBody2D/AnimatedSprite") as AnimatedSprite;
         animated.Frame = random.RandiRange(0, 1);
 
+        rigid = GetNode("RigidBody2D") as RigidBody2D;
+
+        rigid.Connect("body_entered", this, "BodyEntered");
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    private void BodyEntered(Node node)
+    {
+        Main.GetInstance().addPoints(1);
+    }
 }

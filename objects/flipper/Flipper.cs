@@ -14,15 +14,17 @@ public class Flipper : KinematicBody2D
 
 	public override void _Ready()
 	{
+		tween = GetNode("Tween") as Tween;
+
 		if(folded == false)
-		 	Unfold();
+		 	RotationDegrees = angleStart;	 
 	}
 
 	public void Unfold()
 	{
+		tween.InterpolateProperty(this, "rotation_degrees", RotationDegrees, angleStart, time/3, Tween.TransitionType.Elastic, Tween.EaseType.Out);
+		tween.Start();
 		folded = false;
-		RotationDegrees = angleStart;
-		tween = GetNode("Tween") as Tween;
 	}
 
 	public void Activate()

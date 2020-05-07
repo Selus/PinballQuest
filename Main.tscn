@@ -1,9 +1,41 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Main.cs" type="Script" id=1]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Level_3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://audio/point.wav" type="AudioStream" id=4]
+[ext_resource path="res://other/CRT_ColorRect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://other/texture1.png" type="Texture" id=6]
 [ext_resource path="res://BallCamera.cs" type="Script" id=7]
+[ext_resource path="res://other/OverlayShader.shader" type="Shader" id=8]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 8 )
+shader_param/dispAmt = 0.0
+shader_param/dispScale = 0.1
+shader_param/abberationAmt = 0.001
+shader_param/timeLine = 0.0
+shader_param/scanSpeed = 0.0
+shader_param/scanOffset = 1.0
+shader_param/screenCurvature = 1.04
+shader_param/curvatureDistance = 1.5
+shader_param/displace = ExtResource( 6 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 4
+auto_exposure_scale = 0.24
+auto_exposure_min_luma = 0.02
+auto_exposure_max_luma = 0.32
+glow_enabled = true
+glow_intensity = 0.32
+glow_bloom = 0.08
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.2
 
 [node name="Main" type="Node2D"]
 pause_mode = 2
@@ -20,6 +52,19 @@ limit_right = 1080
 limit_bottom = 100000
 script = ExtResource( 7 )
 
+[node name="AudioPoint" type="AudioStreamPlayer2D" parent="BallCamera"]
+stream = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="BallCamera"]
+z_index = 100
+
+[node name="CRT_ColorRect" parent="BallCamera/Position2D" instance=ExtResource( 5 )]
+material = SubResource( 3 )
+margin_left = -947.56
+margin_top = -1056.04
+margin_right = 1052.44
+margin_bottom = 1443.96
+
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
 
@@ -32,3 +77,6 @@ position = Vector2( 42.5641, -179.51 )
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1.16632, 37.3235 )
 rotation = -0.000906628
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )

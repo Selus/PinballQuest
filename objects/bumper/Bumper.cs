@@ -27,6 +27,8 @@ public class Bumper : RigidBody2D
 			rigid.LinearVelocity = rigidDir * strength;
 
 			anim.Play("hit");
+
+			Main.GetInstance().addPoints(1);
 		}
 	}
 }

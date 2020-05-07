@@ -1,8 +1,44 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://objects/flyer/sprite/Dand_1.png" type="Texture" id=1]
 [ext_resource path="res://objects/flyer/sprite/Dand_2.png" type="Texture" id=2]
 [ext_resource path="res://objects/flyer/Dandelion.cs" type="Script" id=3]
+[ext_resource path="res://objects/flyer/sprite/Dand_seed.png" type="Texture" id=4]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.0670103, 0.556701, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.258065, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.751152, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+flag_disable_z = true
+direction = Vector3( 1, 1, 1 )
+spread = 180.0
+gravity = Vector3( 0, -98, 0 )
+initial_velocity = 8.0
+initial_velocity_random = 0.32
+angular_velocity = 360.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.16
+orbit_velocity_random = 0.64
+linear_accel_random = 0.64
+radial_accel = 360.0
+radial_accel_random = 0.09
+damping = 100.0
+damping_random = 0.5
+angle_random = 1.0
+scale = 0.75
+scale_random = 0.25
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.2421
@@ -17,6 +53,19 @@ animations = [ {
 
 [node name="dandelion" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( -0.341995, -166.548 )
+emitting = false
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 7 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2( 0, -56 )

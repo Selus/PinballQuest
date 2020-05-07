@@ -126,6 +126,9 @@ public class Enemy : RigidBody2D
 			health--;
 			timer.Start();
 			spriteBee.Modulate -= Color.Color8(0, 50, 100, 0);
+			
+			// points
+			if (health > 0) Main.GetInstance().addPoints(2);
 
 			// dead
 			if (health <= 0)
@@ -136,11 +139,12 @@ public class Enemy : RigidBody2D
 				LinearVelocity = Vector2.Zero;
 				GravityScale = 1;
 				ApplyCentralImpulse(Vector2.Down * speed);
-				ApplyTorqueImpulse(speed);
+				AngularVelocity = speed/8;
 				timer.WaitTime = 10;
 				timer.Start();
 				anim.Stop();
 				audioDead.Play();
+				Main.GetInstance().addPoints(4);
 			}
 		}
 	}

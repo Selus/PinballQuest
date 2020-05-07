@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://objects/ball/sprite/Zasob_9.png" type="Texture" id=1]
 [ext_resource path="res://audio/knock_2.wav" type="AudioStream" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://audio/knock_3.wav" type="AudioStream" id=8]
 [ext_resource path="res://objects/ball/sprite/Zasob_10.png" type="Texture" id=9]
 [ext_resource path="res://objects/ball/sprite/Zasob_13.png" type="Texture" id=10]
-[ext_resource path="res://objects/ball/sprite/ball.png" type="Texture" id=11]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.1
@@ -27,7 +26,7 @@ continuous_cd = 2
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 5 )
-velocityMax = 10240.0
+velocityMax = 4086.0
 angularVelocityMax = 64.0
 knock_0 = ExtResource( 4 )
 knock_1 = ExtResource( 3 )
@@ -45,14 +44,6 @@ volume_db = -8.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
-
-[node name="Light2D" type="Light2D" parent="."]
-visible = false
-light_mask = 2
-texture = ExtResource( 11 )
-texture_scale = 0.64
-mode = 3
-range_item_cull_mask = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )

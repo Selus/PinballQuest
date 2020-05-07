@@ -11,12 +11,15 @@ public class Main : Node2D
 	private List<Checkpoint> checkpoints = new List<Checkpoint>();
 	private List<Flipper> flippers = new List<Flipper>();
 	private Checkpoint currentCheckpoint;
+	private AudioStreamPlayer2D audioPoint;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		instance = this;
 		GetTree().Paused = true;
 		camera = GetNode("BallCamera") as BallCamera;
+		audioPoint = camera.GetNode("AudioPoint") as AudioStreamPlayer2D;
 	}
 
 	public override void _Process(float delta)
@@ -116,7 +119,11 @@ public class Main : Node2D
 
 	public void addPoints(int amount)
 	{
-		points =+ amount;
+		audioPoint.Stop(); // fixing non playing streams
+		audioPoint.PitchScale = Mathf.Clamp(0.75f + amount/5, 0.75f, 2f);
+		audioPoint.Play();
+		points += amount;
+
 	}
 	public int getPoints()
 	{

@@ -112,9 +112,11 @@ polygon = PoolVector2Array( 189.37, -122.511, 262.951, 61.4414, 289.258, 146.538
 
 [node name="FlipperLeft" parent="." instance=ExtResource( 2 )]
 position = Vector2( 341.469, 1696.51 )
+rotation = 2.08567
 
 [node name="FlipperRight" parent="." instance=ExtResource( 5 )]
 position = Vector2( 706.466, 1694.45 )
+rotation = -2.08567
 
 [node name="FlipperRight4" parent="." instance=ExtResource( 5 )]
 position = Vector2( 720.062, -238.025 )
@@ -138,7 +140,6 @@ position = Vector2( 545.389, -153.416 )
 rotation = -3.14159
 scale = Vector2( 4.181, 1 )
 forceCenter = true
-destroyOnUse = true
 
 [node name="Booster3" parent="." instance=ExtResource( 15 )]
 position = Vector2( 740.42, -716.225 )
@@ -323,6 +324,18 @@ position = Vector2( 955.001, -2287.43 )
 position = Vector2( 1101.29, -2981.73 )
 rotation = 3.14159
 
+[node name="Side_25" parent="." instance=ExtResource( 28 )]
+position = Vector2( 1099.24, -4425.92 )
+rotation = 1.57079
+
+[node name="Side_26" parent="." instance=ExtResource( 28 )]
+position = Vector2( 621.463, -4425.92 )
+rotation = 1.57079
+
+[node name="Side_24" parent="." instance=ExtResource( 28 )]
+position = Vector2( 1107.44, -3627.65 )
+rotation = 3.14159
+
 [node name="Side_2" parent="." instance=ExtResource( 30 )]
 position = Vector2( 234.284, -2630.46 )
 rotation = -3.14159
@@ -348,8 +361,12 @@ position = Vector2( 101.427, -2218.46 )
 position = Vector2( -6.97852, -4202.74 )
 
 [node name="Side_20" parent="." instance=ExtResource( 16 )]
-position = Vector2( 1048.45, -3871.99 )
+position = Vector2( 968.479, -3853.54 )
 rotation = 2.09439
+
+[node name="Side_23" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1075.11, -3644.38 )
+rotation = 2.61799
 
 [node name="Star4" parent="." instance=ExtResource( 31 )]
 position = Vector2( 804.273, 229.027 )
@@ -377,4 +394,3 @@ position = Vector2( 647.561, -3581.29 )
 
 [node name="Cage2" parent="." instance=ExtResource( 19 )]
 position = Vector2( 499.38, -3887.76 )
-goldenHamster = true

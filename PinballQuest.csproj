@@ -61,9 +61,10 @@
     <Compile Include="HUD\ResumeButton.cs" />
     <Compile Include="HUD\RevieButton.cs" />
     <Compile Include="HUD\StartButton.cs" />
+    <Compile Include="Level.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="objects\ball\Ball.cs" />
-	<Compile Include="objects\Checkpoint\Checkpoint.cs" />
+    <Compile Include="objects\Checkpoint\Checkpoint.cs" />
     <Compile Include="objects\booster\Booster.cs" />
     <Compile Include="objects\bumpable\Bumpable.cs" />
     <Compile Include="objects\bumper\Bumper.cs" />

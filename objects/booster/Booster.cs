@@ -5,7 +5,7 @@ public class Booster : Area2D
 {
 	[Export] private float minVelocity = 2048f;
 	[Export] private float multipler = 1;
-    [Export] private bool forceCenter = false;
+	[Export] private bool forceCenter = false;
 
 	private Vector2 direction;
 	private Position2D directionPoint;
@@ -28,22 +28,22 @@ public class Booster : Area2D
 		if (node.GetType() == typeof(Ball))
 		{
 			RigidBody2D rigid = node as RigidBody2D;
-            
-            float absVelocity = Mathf.Sqrt(rigid.LinearVelocity.x * rigid.LinearVelocity.x + rigid.LinearVelocity.y * rigid.LinearVelocity.y);
+			
+			float absVelocity = Mathf.Sqrt(rigid.LinearVelocity.x * rigid.LinearVelocity.x + rigid.LinearVelocity.y * rigid.LinearVelocity.y);
 
-            if (forceCenter)
-            {
+			if (forceCenter)
+			{
 				rigid.Sleeping = true;
-                rigid.GlobalPosition = GlobalPosition;
-            }
+				rigid.GlobalPosition = GlobalPosition;
+			}
 
-            if (absVelocity <= minVelocity)
-            {
-                absVelocity = minVelocity;    
-            }
+			if (absVelocity <= minVelocity)
+			{
+				absVelocity = minVelocity;    
+			}
 
-            rigid.LinearVelocity = direction * absVelocity * multipler;
-            
+			rigid.LinearVelocity = direction * absVelocity * multipler;
+			
 			animation.Play("Color");
 
 			Main.GetInstance().addPoints(1);

@@ -45,6 +45,9 @@ __meta__ = {
 position = Vector2( 543.401, -542.472 )
 scale = Vector2( 0.942393, 0.942393 )
 texture = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="bg_3" type="Sprite" parent="."]
 position = Vector2( 541.643, -3336.62 )
@@ -307,8 +310,12 @@ position = Vector2( 913.817, -1306.63 )
 [node name="Star32" parent="." instance=ExtResource( 11 )]
 position = Vector2( 944.791, -1187.9 )
 
+[node name="FlipperRight" parent="." instance=ExtResource( 21 )]
+position = Vector2( 376.61, 1459.77 )
+rotation = 1.08734
+
 [node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 880.022, 2928.61 )
+position = Vector2( 878.954, 2953.54 )
 
 [node name="Bumper4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 892.963, 2463.51 )
@@ -399,7 +406,7 @@ rotation = -1.06338
 scale = Vector2( 0.64, 0.64 )
 
 [node name="dandelion11" parent="." instance=ExtResource( 28 )]
-position = Vector2( 618.179, 2278.78 )
+position = Vector2( 804.728, 860.531 )
 rotation = -0.760963
 scale = Vector2( 0.64, 0.64 )
 
@@ -416,7 +423,7 @@ position = Vector2( 928.543, -2012.86 )
 rotation = -1.38176
 
 [node name="dandelion12" parent="." instance=ExtResource( 28 )]
-position = Vector2( 664.704, 2281.36 )
+position = Vector2( 812.987, 858.328 )
 rotation = -2.04656
 scale = Vector2( 0.64, 0.64 )
 
@@ -438,8 +445,8 @@ position = Vector2( 736.688, 2091.28 )
 rotation = 3.40723
 
 [node name="Area2D4" parent="." instance=ExtResource( 27 )]
-position = Vector2( 620.178, 1491.15 )
-rotation = 3.40723
+position = Vector2( 836.357, 435.611 )
+rotation = 2.64592
 
 [node name="Area2D7" parent="." instance=ExtResource( 27 )]
 position = Vector2( 240.978, 1351.13 )
@@ -466,8 +473,8 @@ rotation = 3.31613
 minVelocity = 1024.0
 
 [node name="Area2D" parent="." instance=ExtResource( 27 )]
-position = Vector2( 365.522, 360.805 )
-rotation = -5.16908
+position = Vector2( 270.121, 813.96 )
+rotation = -3.52033
 
 [node name="Side_58" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1320.19, -13056 )
@@ -492,7 +499,7 @@ position = Vector2( -82.8746, -5930.59 )
 
 [node name="FlipperLeft3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 432.421, 241.688 )
-rotation = 1.48511
+rotation = 3.66519
 
 [node name="FlipperLeft4" parent="." instance=ExtResource( 9 )]
 position = Vector2( 568.266, -280.094 )
@@ -510,7 +517,7 @@ folded = false
 
 [node name="FlipperRight2" parent="." instance=ExtResource( 21 )]
 position = Vector2( 932.609, 237.912 )
-rotation = -1.51744
+rotation = -1.83259
 
 [node name="Star3" parent="." instance=ExtResource( 11 )]
 position = Vector2( 191.785, 612.654 )
@@ -598,7 +605,6 @@ polygon = PoolVector2Array( -50.4691, 147.964, 42.5812, 129.871, 129.17, 101.439
 [node name="Start_Bumpable2" parent="." instance=ExtResource( 25 )]
 position = Vector2( 273.641, 3267.28 )
 z_index = 11
-strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_Bumpable2"]
 position = Vector2( 39.0715, -88.0701 )
@@ -610,7 +616,6 @@ position = Vector2( 845.277, 3272.74 )
 rotation = -3.14159
 scale = Vector2( 1, -1 )
 z_index = 11
-strength = 1024.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start_Bumpable3"]
 position = Vector2( 38.6655, -99.6567 )

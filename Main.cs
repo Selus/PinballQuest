@@ -18,7 +18,7 @@ public class Main : Node2D
 	public override void _Ready()
 	{
 		instance = this;
-		mainLevel = GetNode("Level_3");
+		mainLevel = GetNode("Level_4");
 		GetTree().Paused = true;
 		camera = GetNode("BallCamera") as BallCamera;
 		audioPoint = camera.GetNode("AudioPoint") as AudioStreamPlayer2D;
@@ -175,7 +175,7 @@ public class Main : Node2D
 		flippers = new List<Flipper>();
 		currentCheckpoint = null;
 		mainLevel.QueueFree();
-		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_3.tscn");
+		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_4.tscn");
 		var node = (Node2D)scene.Instance();
 		camera.LimitBottom = 1000000;
 		AddChild(node);

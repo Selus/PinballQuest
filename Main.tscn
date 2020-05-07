@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Main.cs" type="Script" id=1]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://levels/Level_3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/Level_4.tscn" type="PackedScene" id=3]
 [ext_resource path="res://audio/point.wav" type="AudioStream" id=4]
 [ext_resource path="res://other/CRT_ColorRect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://other/texture1.png" type="Texture" id=6]
@@ -12,7 +12,7 @@
 [sub_resource type="AudioStreamRandomPitch" id=1]
 audio_stream = ExtResource( 4 )
 
-[sub_resource type="ShaderMaterial" id=3]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 8 )
 shader_param/dispAmt = 0.0
 shader_param/dispScale = 0.1
@@ -24,7 +24,7 @@ shader_param/screenCurvature = 1.04
 shader_param/curvatureDistance = 1.5
 shader_param/displace = ExtResource( 6 )
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=3]
 background_mode = 4
 auto_exposure_scale = 0.24
 auto_exposure_min_luma = 0.02
@@ -53,6 +53,7 @@ limit_bottom = 100000
 script = ExtResource( 7 )
 
 [node name="Tween" type="Tween" parent="BallCamera"]
+
 [node name="AudioPoint" type="AudioStreamPlayer2D" parent="BallCamera"]
 stream = SubResource( 1 )
 
@@ -60,7 +61,7 @@ stream = SubResource( 1 )
 z_index = 100
 
 [node name="CRT_ColorRect" parent="BallCamera/Position2D" instance=ExtResource( 5 )]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = -947.56
 margin_top = -1056.04
 margin_right = 1052.44
@@ -71,13 +72,12 @@ pause_mode = 2
 
 [node name="HUD" parent="HUDLayer" instance=ExtResource( 2 )]
 
-[node name="Level_3" parent="." instance=ExtResource( 3 )]
-pause_mode = 1
-position = Vector2( 42.5641, -179.51 )
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1.16632, 37.3235 )
 rotation = -0.000906628
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = SubResource( 3 )
+
+[node name="Level_4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -30.6523, 1619.27 )

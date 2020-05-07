@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Main.cs" type="Script" id=1]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://other/texture1.png" type="Texture" id=6]
 [ext_resource path="res://BallCamera.cs" type="Script" id=7]
 [ext_resource path="res://other/OverlayShader.shader" type="Shader" id=8]
+[ext_resource path="res://audio/2019-10-21_-_Feels_Good_-_David_Fesliyan.ogg" type="AudioStream" id=9]
 
 [sub_resource type="AudioStreamRandomPitch" id=1]
 audio_stream = ExtResource( 4 )
@@ -57,15 +58,20 @@ script = ExtResource( 7 )
 [node name="AudioPoint" type="AudioStreamPlayer2D" parent="BallCamera"]
 stream = SubResource( 1 )
 
+[node name="AudioMusic" type="AudioStreamPlayer2D" parent="BallCamera"]
+stream = ExtResource( 9 )
+autoplay = true
+bus = "Music"
+
 [node name="Position2D" type="Position2D" parent="BallCamera"]
 z_index = 100
 
 [node name="CRT_ColorRect" parent="BallCamera/Position2D" instance=ExtResource( 5 )]
 material = SubResource( 2 )
-margin_left = -947.56
-margin_top = -1056.04
-margin_right = 1052.44
-margin_bottom = 1443.96
+margin_left = -3734.0
+margin_top = -24668.0
+margin_right = 4583.0
+margin_bottom = 4134.0
 
 [node name="TweenZoom" type="Tween" parent="BallCamera"]
 

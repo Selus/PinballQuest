@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/2019-10-21_-_Feels_Good_-_David_Fesliyan.ogg-4eda71ffddf3331ede21dbd103a5e758.oggstr"
+
+[deps]
+
+source_file="res://audio/2019-10-21_-_Feels_Good_-_David_Fesliyan.ogg"
+dest_files=[ "res://.import/2019-10-21_-_Feels_Good_-_David_Fesliyan.ogg-4eda71ffddf3331ede21dbd103a5e758.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

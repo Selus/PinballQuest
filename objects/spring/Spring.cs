@@ -26,6 +26,8 @@ public class Spring : RigidBody2D
 			RigidBody2D rigid = node as RigidBody2D;
 			rigid.LinearVelocity =  direction * strength;
 			animation.Play("Spring");
+
+			Main.GetInstance().addPoints(1);
 		}
 	}
 }

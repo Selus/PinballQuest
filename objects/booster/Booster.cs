@@ -45,6 +45,8 @@ public class Booster : Area2D
             rigid.LinearVelocity = direction * absVelocity * multipler;
             
 			animation.Play("Color");
+
+			Main.GetInstance().addPoints(1);
 		}
 	}
 }

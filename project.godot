@@ -17,7 +17,6 @@ _global_script_class_icons={
 
 config/name="PinballQuest"
 run/main_scene="res://Main.tscn"
-config/icon="res://icon.png"
 
 [autoload]
 
@@ -50,7 +49,3 @@ restart={
 [physics]
 
 2d/default_gravity=800
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

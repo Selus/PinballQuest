@@ -76,6 +76,7 @@
     <Compile Include="objects\HamsterStarter\HamsterStarter.cs" />
     <Compile Include="objects\spring\Spring.cs" />
     <Compile Include="objects\stars\Stars.cs" />
+    <Compile Include="objects\SuperSparkle\SuperSparkle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

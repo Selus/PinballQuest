@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class StartButton : Button
+public class StartButton : TextureButton
 {
 
 

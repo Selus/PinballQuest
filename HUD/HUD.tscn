@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://fonts/JandaManateeSolid.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD/StartButton.cs" type="Script" id=2]
@@ -9,6 +9,14 @@
 [ext_resource path="res://HUD/RestartButton.cs" type="Script" id=7]
 [ext_resource path="res://HUD/RevieButton.cs" type="Script" id=8]
 [ext_resource path="res://HUD/AdButton.cs" type="Script" id=9]
+[ext_resource path="res://img/Start_screen.png" type="Texture" id=10]
+[ext_resource path="res://fonts/JandaManateeBubble.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://img/Button_down.png" type="Texture" id=12]
+[ext_resource path="res://img/Button_up.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -47,24 +55,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StartButton" type="Button" parent="Menu"]
-margin_left = 220.537
-margin_top = 952.931
-margin_right = 840.537
-margin_bottom = 1159.93
+[node name="Start_screen" type="Sprite" parent="Menu"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="StartButton" type="TextureButton" parent="Menu"]
+margin_left = 146.608
+margin_top = 544.221
+margin_right = 896.608
+margin_bottom = 877.221
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+texture_focused = ExtResource( 12 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Menu/StartButton"]
+margin_top = 74.4345
+margin_right = 750.0
+margin_bottom = 256.435
 custom_fonts/font = ExtResource( 5 )
 text = "START"
-script = ExtResource( 2 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TitleLabel" type="Label" parent="Menu"]
-margin_top = 717.724
-margin_right = 1077.06
-margin_bottom = 901.724
+margin_top = 229.963
+margin_right = 1082.93
+margin_bottom = 413.963
 custom_fonts/font = ExtResource( 4 )
-text = "PinHamster"
+text = "Pinball Quest"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel2" type="Label" parent="Menu"]
+margin_top = 400.708
+margin_right = 1077.06
+margin_bottom = 584.708
+custom_fonts/font = SubResource( 2 )
+text = "Super Hamster Rescue Force Saga"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

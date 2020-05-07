@@ -14,6 +14,7 @@ public class Main : Node2D
 	private Node mainLevel;
 	private AudioStreamPlayer2D audioPoint;
 	private HamsterStarter starterHamster;
+	private PackedScene sparkle = (PackedScene)ResourceLoader.Load("res://objects/SuperSparkle/SuperSparkle.tscn");
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -142,7 +143,9 @@ public class Main : Node2D
 		audioPoint.PitchScale = Mathf.Clamp(0.75f + amount/5, 0.75f, 2f);
 		audioPoint.Play();
 		points += amount;
-
+		var superSparkle = (SuperSparkle)sparkle.Instance();
+		superSparkle.Position = balls[0].Position;
+		AddChild(superSparkle);
 	}
 	public int getPoints()
 	{

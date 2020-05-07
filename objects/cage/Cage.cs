@@ -4,7 +4,8 @@ using System;
 public class Cage : Node2D
 {
 	[Export] private int strength = 512;
-
+	[Export] private bool goldenHamster = false;
+	
 	private int hit = 0;
 
 	AnimationPlayer animEyes;
@@ -98,9 +99,11 @@ public class Cage : Node2D
 			// points
 			Main.GetInstance().addPoints(5);
 			hamster.Sleeping = true;
-			this.GetParent().RemoveChild(this);
-			this.QueueFree();
-			
+			if(!goldenHamster)
+			{
+				this.GetParent().RemoveChild(this);
+				this.QueueFree();
+			}
 		}
 	}
 }

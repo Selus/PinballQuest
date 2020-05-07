@@ -40,7 +40,7 @@ public class Main : Node2D
 					{
 						currentCheckpoint = checkpoint;
 						checkpoints.Remove(checkpoint);
-						camera.LimitBottom = (int)(checkpoint.Position.y);
+						camera.queueLimit((int)(checkpoint.Position.y));
 					}
 				}
 		 	}
@@ -205,6 +205,7 @@ public class Main : Node2D
 		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_4.tscn");
 		var node = (Node2D)scene.Instance();
 		camera.LimitBottom = 1000000;
+		camera.queuedLimit = 1000000;
 		AddChild(node);
 		mainLevel = node;
 		var childrenCount = node.GetChildCount();

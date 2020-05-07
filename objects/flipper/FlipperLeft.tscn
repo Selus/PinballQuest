@@ -7,7 +7,7 @@
 "FlipperLeft",
 ]]
 rotation = 0.436332
-collision/safe_margin = 0.16
+collision/safe_margin = 0.32
 motion/sync_to_physics = true
 script = ExtResource( 1 )
 time = 2.0

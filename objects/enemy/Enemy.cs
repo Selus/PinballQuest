@@ -155,7 +155,8 @@ public class Enemy : RigidBody2D
 	{
 		if (health <= 0)
 		{
-			this.RemoveAndSkip();
+			this.GetParent().RemoveChild(this);
+			this.QueueFree();
 		}
 	}
 }

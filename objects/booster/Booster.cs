@@ -6,6 +6,7 @@ public class Booster : Area2D
 	[Export] private float minVelocity = 2048f;
 	[Export] private float multipler = 1;
 	[Export] private bool forceCenter = false;
+	[Export] private bool destroyOnUse = false;
 
 	private Vector2 direction;
 	private Position2D directionPoint;
@@ -47,6 +48,11 @@ public class Booster : Area2D
 			animation.Play("Color");
 
 			Main.GetInstance().addPoints(1);
+			if(destroyOnUse)
+			{
+				this.GetParent().RemoveChild(this);
+				this.QueueFree();
+			}
 		}
 	}
 }

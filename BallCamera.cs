@@ -8,9 +8,16 @@ public class BallCamera : Godot.Camera2D
 	// private string b = "text";
 
 	// Called when the node enters the scene tree for the first time.
+	public int queuedLimit = 1000000;
 	public override void _Ready()
 	{
 		
+	}
+
+	public void queueLimit(int l)
+	{
+		//LimitBottom = (int)(Position.y - 1920/2);
+		queuedLimit = l;
 	}
 
 	public void dezoom()
@@ -54,6 +61,18 @@ public class BallCamera : Godot.Camera2D
 		tween.RemoveAll();
 		tween.InterpolateProperty(this, "Position",	this.Position, newPosition, 0.3f,Tween.TransitionType.Quad,Tween.EaseType.Out);
 		tween.Start();
+		GD.Print("LimitBottom",LimitBottom,"queuedLimit",queuedLimit,"(int)(newPosition.y + 1080/2)",(int)(newPosition.y + 1080/2));
+
+		if(LimitBottom > queuedLimit && (int)(newPosition.y + 1920/2) < LimitBottom && (int)(newPosition.y + 1920/2) < queuedLimit)
+		{
+			//LimitBottom = (int)(newPosition.y + 1920/2);
+			LimitBottom = queuedLimit;
+		}
+		else if(LimitBottom > queuedLimit && (int)(newPosition.y + 1920/2) < LimitBottom && (int)(newPosition.y + 1920/2) > queuedLimit)
+		{
+			LimitBottom = (int)(newPosition.y + 1920/2);
+			//LimitBottom = queuedLimit;
+		}
 	}
   }
 }

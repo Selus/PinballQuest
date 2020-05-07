@@ -8,7 +8,7 @@
 ]]
 position = Vector2( -1, 0 )
 rotation = -0.436332
-collision/safe_margin = 0.16
+collision/safe_margin = 0.32
 motion/sync_to_physics = true
 script = ExtResource( 1 )
 angleEnd = 30.0

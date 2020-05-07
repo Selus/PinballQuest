@@ -123,10 +123,11 @@ __meta__ = {
 
 [node name="AdButton" type="Button" parent="GameOver"]
 margin_left = 76.9473
-margin_top = 572.902
+margin_top = 748.902
 margin_right = 1002.95
-margin_bottom = 779.902
+margin_bottom = 955.902
 custom_fonts/font = SubResource( 1 )
+disabled = true
 text = "Watch an ad to revive hamster"
 script = ExtResource( 9 )
 __meta__ = {
@@ -135,10 +136,11 @@ __meta__ = {
 
 [node name="RevieButton" type="Button" parent="GameOver"]
 margin_left = 217.537
-margin_top = 954.93
+margin_top = 1130.93
 margin_right = 837.537
-margin_bottom = 1161.93
+margin_bottom = 1337.93
 custom_fonts/font = ExtResource( 5 )
+disabled = true
 text = "REVIVE"
 script = ExtResource( 8 )
 __meta__ = {
@@ -159,9 +161,9 @@ __meta__ = {
 
 [node name="TitleLabel" type="Label" parent="GameOver"]
 margin_left = -3.4248
-margin_top = 334.147
+margin_top = 430.147
 margin_right = 1073.64
-margin_bottom = 518.147
+margin_bottom = 614.147
 custom_fonts/font = ExtResource( 4 )
 text = "PinHamster"
 align = 1

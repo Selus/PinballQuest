@@ -35,7 +35,7 @@ public class BallCamera : Godot.Camera2D
 	if(starter != null)
 	{
 		Vector2 newPosition= new Vector2(starter.Position.x,starter.Position.y);
-		this.Zoom = new Vector2(0.65f,0.65f);
+		this.Zoom = new Vector2(1f,1f);
 		var tween = (Tween)GetNode("Tween");
 		tween.RemoveAll();
 		tween.InterpolateProperty(this, "Position",	this.Position, newPosition, 0.4f,Tween.TransitionType.Quad,Tween.EaseType.Out);

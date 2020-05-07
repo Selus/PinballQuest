@@ -144,8 +144,16 @@ public class Main : Node2D
 		audioPoint.Play();
 		points += amount;
 		// var superSparkle = (SuperSparkle)sparkle.Instance();
-		// superSparkle.GlobalPosition = balls[0].GlobalPosition;
-		// AddChild(superSparkle);
+		// if(balls.Count != 0)
+		// {
+		// 	for(int j = 0;j < balls.Count ; j++)
+		// 	{
+				
+		// 		//var screenCord = (balls[j].GetViewportTransform() * balls[j].GetGlobalTransform()).Xform(balls[j].Position);
+		// 		superSparkle.RectGlobalPosition = balls[j].GlobalPosition;
+		// 	}
+		// }
+		// GetNode("HUDLayer").AddChild(superSparkle);
 	}
 	public int getPoints()
 	{

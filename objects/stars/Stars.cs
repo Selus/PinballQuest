@@ -36,6 +36,7 @@ public class Stars : Area2D
 
 	private void Timeout()
 	{
-		RemoveAndSkip();
+		this.GetParent().RemoveChild(this);
+		this.QueueFree();
 	}
 }

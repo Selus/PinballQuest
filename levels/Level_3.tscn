@@ -12,7 +12,7 @@
 [ext_resource path="res://objects/spring/Spring.tscn" type="PackedScene" id=10]
 [ext_resource path="res://objects/stars/Stars.tscn" type="PackedScene" id=11]
 [ext_resource path="res://objects/sides/Island_3.tscn" type="PackedScene" id=12]
-[ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=13]
+[ext_resource path="res://objects/HamsterStarter/HamsterStarter.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objects/sides/Side_3.tscn" type="PackedScene" id=14]
 [ext_resource path="res://objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=15]
 [ext_resource path="res://objects/sides/Side_8.tscn" type="PackedScene" id=16]
@@ -1324,3 +1324,6 @@ shape = SubResource( 1 )
 
 [node name="Checkpoint" parent="." instance=ExtResource( 15 )]
 position = Vector2( 547.212, 3654.44 )
+
+[node name="Cage2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 528.61, 2954.8 )

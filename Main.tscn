@@ -67,6 +67,8 @@ margin_top = -1056.04
 margin_right = 1052.44
 margin_bottom = 1443.96
 
+[node name="TweenZoom" type="Tween" parent="BallCamera"]
+
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
 

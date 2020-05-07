@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Main.cs" type="Script" id=1]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://levels/Level_3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/Level_JP_0.tscn" type="PackedScene" id=3]
 [ext_resource path="res://audio/point.wav" type="AudioStream" id=4]
 [ext_resource path="res://other/CRT_ColorRect.tscn" type="PackedScene" id=5]
 [ext_resource path="res://other/texture1.png" type="Texture" id=6]
@@ -53,6 +53,7 @@ limit_bottom = 100000
 script = ExtResource( 7 )
 
 [node name="Tween" type="Tween" parent="BallCamera"]
+
 [node name="AudioPoint" type="AudioStreamPlayer2D" parent="BallCamera"]
 stream = SubResource( 1 )
 

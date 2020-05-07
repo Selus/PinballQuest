@@ -1,12 +1,35 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://levels/Level_2.cs" type="Script" id=1]
 [ext_resource path="res://objects/flipper/FlipperRight.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/sides/Side_1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/flipper/FlipperLeft.tscn" type="PackedScene" id=4]
 
+[sub_resource type="CSharpScript" id=1]
+script/source = "using Godot;
+using System;
+
+public class Level_2 : Level
+{
+	// Declare member variables here. Examples:
+	// private int a = 2;
+	// private string b = \"text\";
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+		
+	}
+
+//  // Called every frame. 'delta' is the elapsed time since the previous frame.
+//  public override void _Process(float delta)
+//  {
+//      
+//  }
+}
+"
+
 [node name="Level_2" type="Node2D"]
-script = ExtResource( 1 )
+script = SubResource( 1 )
 Height = 470.0
 CheckPoint = true
 

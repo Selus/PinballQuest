@@ -175,7 +175,7 @@ public class Main : Node2D
 		flippers = new List<Flipper>();
 		currentCheckpoint = null;
 		mainLevel.QueueFree();
-		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_3.tscn");
+		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_JP_3.tscn");
 		var node = (Node2D)scene.Instance();
 		camera.LimitBottom = 1000000;
 		AddChild(node);

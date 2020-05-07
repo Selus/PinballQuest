@@ -40,7 +40,7 @@ tracks/1/keys = {
 
 [node name="Enemy" type="RigidBody2D"]
 gravity_scale = 0.0
-contacts_reported = 1
+contacts_reported = 3
 contact_monitor = true
 script = ExtResource( 1 )
 __meta__ = {

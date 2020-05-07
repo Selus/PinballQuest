@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://objects/sides/Island_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/sides/Side_12.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://objects/sides/Island_3.tscn" type="PackedScene" id=12]
 [ext_resource path="res://objects/ball/Ball.tscn" type="PackedScene" id=13]
 [ext_resource path="res://objects/sides/Side_3.tscn" type="PackedScene" id=14]
+[ext_resource path="res://objects/Checkpoint/Checkpoint.tscn" type="PackedScene" id=15]
 [ext_resource path="res://objects/sides/Side_8.tscn" type="PackedScene" id=16]
 [ext_resource path="res://objects/sides/Side_6.tscn" type="PackedScene" id=17]
 [ext_resource path="res://objects/sides/Side_9.tscn" type="PackedScene" id=18]
@@ -32,7 +33,7 @@
 [ext_resource path="res://objects/movable/Movable.tscn" type="PackedScene" id=31]
 [ext_resource path="res://img/Beehive.png" type="Texture" id=32]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 68.0712
 
 [node name="Level_3" type="Node2D"]
@@ -55,6 +56,14 @@ position = Vector2( 541.643, -6095.59 )
 scale = Vector2( 0.942393, 0.942393 )
 texture = ExtResource( 24 )
 
+[node name="bg_6" type="Sprite" parent="."]
+position = Vector2( 541.643, -11654 )
+scale = Vector2( 0.942393, 0.942393 )
+texture = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="bg_5" type="Sprite" parent="."]
 position = Vector2( 543.401, -8874.04 )
 scale = Vector2( 0.942393, 0.942393 )
@@ -65,6 +74,12 @@ __meta__ = {
 
 [node name="bg_1" type="Sprite" parent="."]
 position = Vector2( 0, 854.993 )
+scale = Vector2( 0.942393, 0.942393 )
+texture = ExtResource( 24 )
+centered = false
+
+[node name="bg_7" type="Sprite" parent="."]
+position = Vector2( 0, 2788.45 )
 scale = Vector2( 0.942393, 0.942393 )
 texture = ExtResource( 24 )
 centered = false
@@ -283,17 +298,17 @@ position = Vector2( 271.816, 1731.42 )
 [node name="Bumper2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 445.576, 1949.91 )
 
+[node name="Star30" parent="." instance=ExtResource( 11 )]
+position = Vector2( 831.22, -1399.55 )
+
+[node name="Star31" parent="." instance=ExtResource( 11 )]
+position = Vector2( 913.817, -1306.63 )
+
+[node name="Star32" parent="." instance=ExtResource( 11 )]
+position = Vector2( 944.791, -1187.9 )
+
 [node name="Ball" parent="." instance=ExtResource( 13 )]
-position = Vector2( 556.824, -2167.17 )
-
-[node name="Star" parent="Ball" instance=ExtResource( 11 )]
-position = Vector2( 274.396, 767.617 )
-
-[node name="Star2" parent="Ball" instance=ExtResource( 11 )]
-position = Vector2( 356.993, 860.538 )
-
-[node name="Star3" parent="Ball" instance=ExtResource( 11 )]
-position = Vector2( 387.967, 979.272 )
+position = Vector2( 880.022, 2928.61 )
 
 [node name="Bumper4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 892.963, 2463.51 )
@@ -322,11 +337,11 @@ scale = Vector2( 1, -1 )
 position = Vector2( -152.376, -5734.46 )
 
 [node name="Side_4" parent="." instance=ExtResource( 19 )]
-position = Vector2( 1046.4, -359.226 )
-rotation = 0.218029
+position = Vector2( 964.378, -377.681 )
+rotation = 0.0907571
 
 [node name="Side_18" parent="." instance=ExtResource( 19 )]
-position = Vector2( 828.301, -1329.96 )
+position = Vector2( 836.503, -1332.01 )
 rotation = -0.123152
 scale = Vector2( 1.59882, 1.42249 )
 
@@ -1039,7 +1054,6 @@ rotation = -0.524035
 [node name="Star27" parent="." instance=ExtResource( 11 )]
 position = Vector2( 698.875, -7223.67 )
 rotation = 0.0947462
-scale = Vector2( 1, 1 )
 
 [node name="Star28" parent="." instance=ExtResource( 11 )]
 position = Vector2( 807.527, -7358.82 )
@@ -1052,7 +1066,6 @@ rotation = -1.26518
 [node name="Star37" parent="." instance=ExtResource( 11 )]
 position = Vector2( 853.196, -10225.5 )
 rotation = 0.523019
-scale = Vector2( 1, 1 )
 
 [node name="Star43" parent="." instance=ExtResource( 11 )]
 position = Vector2( 675.5, -10598.6 )
@@ -1250,56 +1263,59 @@ linear_damp = 0.0
 angular_damp = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D13"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( -326.857, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( -621.98, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( 331.617, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( 160.255, 301.47 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( -166.602, 301.47 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( -469.659, 301.47 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( -626.74, 561.687 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( -323.684, 560.1 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( 6.10352e-05, 552.166 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( 337.964, 553.753 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( 154.183, -367.671 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( -163.029, -360.118 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Area2D13"]
 position = Vector2( -472.687, -365.153 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 15 )]
+position = Vector2( 547.212, 3654.44 )

@@ -11,12 +11,14 @@ public class Main : Node2D
 	private List<Checkpoint> checkpoints = new List<Checkpoint>();
 	private List<Flipper> flippers = new List<Flipper>();
 	private Checkpoint currentCheckpoint;
+	private Node mainLevel;
 	private AudioStreamPlayer2D audioPoint;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		instance = this;
+		mainLevel = GetNode("Level_3");
 		GetTree().Paused = true;
 		camera = GetNode("BallCamera") as BallCamera;
 		audioPoint = camera.GetNode("AudioPoint") as AudioStreamPlayer2D;
@@ -25,14 +27,15 @@ public class Main : Node2D
 	public override void _Process(float delta)
 	{
 		//ball tracker
-		foreach(Ball ball in balls)
+		for(int i = 0;i < balls.Count ; i++)
 		{
+			var ball = balls[i];
 		 	if(checkpoints.Count != 0)
 		 	{
-		 		for(int i = 0;i < checkpoints.Count ; i++)
+		 		for(int j = 0;j < checkpoints.Count ; j++)
 				{
-					var checkpoint = checkpoints[i];
-					if(ball.Position.y < checkpoint.Position.y)
+					var checkpoint = checkpoints[j];
+					if(ball.Position.y < checkpoint.Position.y-200)
 					{
 						currentCheckpoint = checkpoint;
 						checkpoints.Remove(checkpoint);
@@ -42,9 +45,9 @@ public class Main : Node2D
 		 	}
 			if(flippers.Count != 0)
 		 	{
-		 		for(int i = 0; i < flippers.Count ; i++)
+		 		for(int j = 0; j < flippers.Count ; j++)
 				{
-					var flipper = flippers[i];
+					var flipper = flippers[j];
 					if(flipper.folded == true)
 					{
 						if(ball.Position.y < flipper.Position.y)
@@ -54,14 +57,29 @@ public class Main : Node2D
 					}
 				}
 			}
+
+			if(ball.Position.y > currentCheckpoint.Position.y)
+			{
+				if(balls.Count > 1)
+				{
+					balls.Remove(ball);
+					ball.QueueFree();
+				} 
+				else if(balls.Count == 1)
+				{
+					balls.Remove(ball);
+					gameOver();
+				}
+			}
 		}
 
 
 //input manager
 		if (Input.IsActionJustPressed("ui_up"))
 		{
-			foreach(Ball ball in balls)
+			for(int i = 0;i < balls.Count ; i++)
 			{
+				var ball = balls[i];
 				ball.ApplyImpulse(GlobalPosition, new Vector2(0,-1) * 1024);
 			}
 		}
@@ -91,26 +109,15 @@ public class Main : Node2D
 		{
 			if(GetTree().Paused == true)
 			{
-				GetTree().Paused = false;
-				hideGUI();
+				resume();
 			} else {
-				GetTree().Paused = true;
-				showGUI();
+				pause();
 			}
 			
 		}
 	}
-	private void showGUI()
-	{
-		(GetNode("HUDLayer/HUD/Menu") as Control).Visible = true;
-	}
-	private void hideGUI()
-	{
-		(GetNode("HUDLayer/HUD/Menu") as Control).Visible = false;
-	}
 
-
-	//api
+	//--------------------------------------api------------------------------------
 	private static Main instance=null;
 	static public Main GetInstance() 
 	{
@@ -129,31 +136,56 @@ public class Main : Node2D
 	{
 		return points;
 	}
+	public void MULTIBALL(Ball ball)
+	{
+		var newBall = (Ball)ball.Duplicate();
+		balls.Add(newBall);
+		newBall.ApplyImpulse(GlobalPosition, new Vector2(0,-1) * 1024);
+		AddChild(newBall);
+	}
+	public IList<Ball> getBalls()
+	{
+		return balls.AsReadOnly();
+	}
 	public void startGame()
 	{
+		restartGame();
+	}
+	public void pause()
+	{
+		GetTree().Paused = true;
+		HUD.GetInstance().showPauseMenu();
+	}
+	public void resume()
+	{
 		GetTree().Paused = false;
-		hideGUI();
+		HUD.GetInstance().hidePauseMenu();
 	}
 	public void gameOver()
 	{
-		GetTree().Paused = false;
-		hideGUI();
+		GetTree().Paused = true;
+		HUD.GetInstance().showGameOver();
 	}
 	public void restartGame()
 	{
 		points = 0;
 		lives = 1;
-		RemoveChild(GetNode("Level_3"));
+		balls = new List<Ball>();
+		checkpoints = new List<Checkpoint>();
+		flippers = new List<Flipper>();
+		currentCheckpoint = null;
+		mainLevel.QueueFree();
 		var scene = (PackedScene)ResourceLoader.Load("res://levels/Level_3.tscn");
 		var node = (Node2D)scene.Instance();
 		camera.LimitBottom = 1000000;
 		AddChild(node);
+		mainLevel = node;
 		var childrenCount = node.GetChildCount();
 		if(childrenCount != 0)
 		{
 			for(int i = 0;i < childrenCount ; i++)
 			{
-				var child = GetNode("Level_3").GetChild(i);
+				var child = node.GetChild(i);
 				if (child.GetType() == typeof(Checkpoint))
 				{
 					checkpoints.Add(child as Checkpoint);
@@ -169,6 +201,6 @@ public class Main : Node2D
 			}
 		}
 		GetTree().Paused = false;
-		hideGUI();
+		HUD.GetInstance().hideAll();
 	}
 }
